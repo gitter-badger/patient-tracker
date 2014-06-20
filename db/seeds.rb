@@ -5,3 +5,23 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Patient.destroy_all
+
+Patient.create!(
+  [
+    { encounter_type: 'Adult Medicine' },
+    { encounter_type: 'Adult Medicine' },
+    { encounter_type: 'Adult Medicine' },
+    { encounter_type: 'Adult Medicine' },
+    { encounter_type: 'ICU' },
+    { encounter_type: 'Long-term Care' },
+    { encounter_type: 'Long-term Care' },
+    { encounter_type: 'Newborn' },
+    { encounter_type: 'Pediatric ER' },
+    { encounter_type: 'Pediatric ER' },
+    { encounter_type: 'Pediatric Inpatient' }
+  ]
+)
+
+puts "Created #{Patient.count} patients!"
