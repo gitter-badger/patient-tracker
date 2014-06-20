@@ -8,20 +8,9 @@
 
 User.destroy_all
 
-User.create!(
-  [
-    {
-      name: 'Administrator',
-      role: 'Admin'
-    },
-    {
-      name: 'Doctor Doe',
-      role: 'Doctor'
-    }
-  ]
-)
-
-
+admin    = User.create!({name: 'Administrator',  role: 'Admin' })
+doctor_1 = User.create!({name: 'Doctor Joe',     role: 'Doctor'})
+doctor_2 = User.create!({name: 'Doctor Jane',    role: 'Doctor'})
 
 puts "Created #{User.count} users!"
 
@@ -33,67 +22,67 @@ Patient.create!(
   [
     {
       encounter_type: 'Adult Medicine',
-      user_id: User.first.id,
+      user: doctor_1,
       created_at: 5.days.ago
     },
     {
       encounter_type: 'Adult Medicine',
-      user_id: User.first.id,
+      user: doctor_1,
       created_at: 4.days.ago
     },
     {
       encounter_type: 'Adult Medicine',
-      user_id: User.first.id,
+      user: doctor_1,
       created_at: 3.days.ago
     },
     {
       encounter_type: 'Adult Medicine',
-      user_id: User.first.id,
+      user: doctor_1,
       created_at: 2.days.ago
     },
     {
       encounter_type: 'ICU',
-      user_id: User.first.id,
+      user: doctor_1,
       created_at: 2.days.ago
     },
     {
       encounter_type: 'Long-term Care',
-      user_id: User.first.id,
+      user: doctor_1,
       created_at: 2.days.ago
     },
     {
       encounter_type: 'Long-term Care',
-      user_id: User.first.id,
+      user: doctor_2,
       created_at: 2.days.ago
     },
     {
       encounter_type: 'Newborn',
-      user_id: User.first.id,
+      user: doctor_1,
       created_at: 1.days.ago
     },
     {
       encounter_type: 'Pediatric ER',
-      user_id: User.first.id,
+      user: doctor_1,
       created_at: 5.days.ago
     },
     {
       encounter_type: 'Pediatric ER',
-      user_id: User.first.id,
+      user: doctor_1,
       created_at: 4.days.ago
     },
     {
       encounter_type: 'Pediatric Inpatient',
-      user_id: User.first.id,
+      user: doctor_1,
       encountered_on: 1.day.ago
     },
     {
       encounter_type: 'Pediatric Inpatient',
-      user_id: User.first.id,
+      user: doctor_2,
       encountered_on: 2.days.ago
     },
     {
       encounter_type: 'Pediatric Inpatient',
-      user_id: User.first.id,
+      user: doctor_2,
       encountered_on: 2.days.ago
     }
   ]
