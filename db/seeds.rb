@@ -10,16 +10,16 @@ Patient.destroy_all
 
 Patient.create!(
   [
-    { encounter_type: 'Adult Medicine' },
-    { encounter_type: 'Adult Medicine' },
-    { encounter_type: 'Adult Medicine' },
-    { encounter_type: 'Adult Medicine' },
-    { encounter_type: 'ICU' },
-    { encounter_type: 'Long-term Care' },
-    { encounter_type: 'Long-term Care' },
-    { encounter_type: 'Newborn' },
-    { encounter_type: 'Pediatric ER' },
-    { encounter_type: 'Pediatric ER' },
+    { encounter_type: 'Adult Medicine', created_at: 5.days.ago },
+    { encounter_type: 'Adult Medicine', created_at: 4.days.ago },
+    { encounter_type: 'Adult Medicine', created_at: 3.days.ago },
+    { encounter_type: 'Adult Medicine', created_at: 2.days.ago },
+    { encounter_type: 'ICU', created_at: 2.days.ago },
+    { encounter_type: 'Long-term Care', created_at: 2.days.ago },
+    { encounter_type: 'Long-term Care', created_at: 2.days.ago },
+    { encounter_type: 'Newborn', created_at: 1.days.ago },
+    { encounter_type: 'Pediatric ER', created_at: 5.days.ago },
+    { encounter_type: 'Pediatric ER', created_at: 4.days.ago },
     { encounter_type: 'Pediatric Inpatient' }
   ]
 )
