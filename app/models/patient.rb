@@ -4,4 +4,6 @@ class Patient < ActiveRecord::Base
   scope :icu, ->{ where encounter_type: 'icu' }
   scope :encountered_today, ->{ where 'created_at > ?', Date.today }
 
+  belongs_to :user
+
 end
