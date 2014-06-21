@@ -551,7 +551,7 @@ text-shadow: none;
    color: #010101;
 }
 
-{
+.mystery_label{ /*errored on heroku assets:precompile*/
    margin-top: 17px;
    color: #010101;
    /*line-height: 14px;*/
