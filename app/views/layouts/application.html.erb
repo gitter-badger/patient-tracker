@@ -1,10 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PatientTracker</title>
+  <title>Patient Tracker</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'swedish.jpg' %>
+  <%= favicon_link_tag 'swedish.jpg', rel: 'apple-touch-icon', type: 'image/jpeg' %>
+
+  <!--  Begin HOW LIVE Template head -->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="description" content="Track types of patient encounters.">
+
+  <%= stylesheet_link_tag 'gibson', media: 'all', 'data-turbolinks-track' => true %>
+  <!-- <link rel="stylesheet" type="text/css" href="./gibson.css" media="all"> -->
+  <%= stylesheet_link_tag 'hours_selector', media: 'all', 'data-turbolinks-track' => true %>
+  <!-- <link rel="stylesheet" href="http://www.10000ft.com/_themes/10000ft/css/screen2.css"> -->
+  <%= stylesheet_link_tag 'jquery_mobile', media: 'all', 'data-turbolinks-track' => true %>
+  <!-- <link href="http://www.10000ft.com/_themes/10000ft/css/jqm/jquery.mobile-1.4.0.css"
+      rel="stylesheet"> -->
+  <%= javascript_include_tag 'jquery_ui', 'data-turbolinks-track' => true %>
+  <!-- <script src="./jquery-ui.js"></script> -->
+  <script>
+    $(document).bind("mobileinit", function () {
+      $.mobile.changePage.defaults.changeHash = false;
+      $.mobile.minScrollBack = 0;
+      $.mobile.ajaxEnabled = false;
+      $.mobile.linkBindingEnabled = true;
+      $.mobile.hashListeningEnabled = true;
+      $.mobile.pushStateEnabled = false;
+    });
+  </script>
+  <%= javascript_include_tag 'jquery_mobile', 'data-turbolinks-track' => true %>
+  <!-- <script src="./jquery.mobile-1.4.0.min.js"></script> -->
+  <!--  End HOW LIVE Template head -->
 </head>
 <body>
 
