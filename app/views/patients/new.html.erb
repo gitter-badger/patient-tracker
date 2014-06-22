@@ -66,6 +66,7 @@
             </div>
             <input type="hidden" id="guidfield" value="token">
             <input type="hidden" id="conffield" name="conference" value="#patient_tracker">
+
             <input type="hidden" name="adult_medicine" value="0">
             <input type="hidden" name="icu" value="0">
             <input type="hidden" name="long_term_care" value="0">
@@ -73,9 +74,10 @@
             <input type="hidden" name="pediatric_inpatient" value="0">
             <input type="hidden" name="other" value="0">
             <input type="hidden" name="day" value="2014-06-21">
+
             <div class="saveline">
-            <input data-role="none" class="signUpBtnMid blockFloatRight" type="submit"
-                value="Submit Patients" onclick="this.disabled=true,this.form.submit();">
+              <input data-role="none" class="signUpBtnMid blockFloatRight" type="submit"
+                  value="Submit Patients" onclick="this.disabled=true,this.form.submit();">
             </div>
           </form>
         </div>
@@ -95,6 +97,10 @@
         var str2 = ret[1];
         console.log(ret);
         setHours(str2);
+      });
+
+      $(document).ready( function() {
+        $(document).find('div.ui-loader.ui-corner-all.ui-body-a.ui-loader-default').html('')
       });
 
       var section;
@@ -227,10 +233,5 @@
         console.log(loc);
       }
     </script>
-
-    <div class="ui-loader ui-corner-all ui-body-a ui-loader-default">
-      <span class="ui-icon-loading"></span>
-      <h1>loading</h1>
-    </div>
   </body>
 </html>
