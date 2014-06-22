@@ -6,7 +6,7 @@
   <strong>Encountered On:</strong>
   <%= @patient.encountered_on %>
   <strong>Doctor:</strong>
-  <%= @patient.user.name %>
+  <%= @patient.user.present? ? @patient.user.name : "Unknown" %>
 </p>
 
 <%= link_to 'Edit', edit_patient_path(@patient) %> |

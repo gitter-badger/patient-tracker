@@ -15,7 +15,7 @@
       <tr>
         <td><%= patient.encounter_type %></td>
         <td><%= patient.encountered_on %></td>
-        <th><%= patient.user.name %></th>
+        <th><%= patient.user.present? ? patient.user.name : "Unknown" %></th>
         <td><%= link_to 'Show', patient %></td>
         <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
         <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
