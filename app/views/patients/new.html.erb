@@ -18,7 +18,7 @@
 
       <div class="wrap_section_narrow">
         <div class="spacer">
-          Enter the number of each type of patient you have encountered today:
+          <%= date_field_tag(:date, Date.today, onchange: "setEncounteredOn()") %>
         </div>
       </div>
 
@@ -125,6 +125,13 @@
         remaining = 24 - total;
         $('input[name="other"]').val(remaining);
         $("#other").html(remaining);
+      }
+
+      function setEncounteredOn(){
+        var date = $('#date').val();
+        console.log(date);
+
+        $('#encountered_on').val(date);
       }
 
       function showHours(){

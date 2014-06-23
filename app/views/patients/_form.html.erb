@@ -18,6 +18,7 @@
 
   <div class="field">
     <input type="hidden" name="hidden[raven]" value="true">
+    <%= hidden_field_tag(:encountered_on, Date.today) %>
     <input type="hidden" name="adult_medicine" value="0">
     <input type="hidden" name="icu" value="0">
     <input type="hidden" name="long_term_care" value="0">
