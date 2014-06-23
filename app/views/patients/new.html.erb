@@ -56,30 +56,7 @@
         </a>
 
         <div class="form-block">
-          <form method="post" class="form-horizontal" role="form">
-            <input type="hidden" name="hidden[raven]" value="true">
-            <input type="hidden" name="hidden[formset]" value="roi">
-            <input type="hidden" name="hidden[return]" value="/my_roi/token">
-            <div class="lineitem_end">
-              <div id="total" class="totalnumber blockFloatRight">0</div>
-              <div class="totallabel blockFloatRight">Total Patients: </div>
-            </div>
-            <input type="hidden" id="guidfield" value="token">
-            <input type="hidden" id="conffield" name="conference" value="#patient_tracker">
-
-            <input type="hidden" name="adult_medicine" value="0">
-            <input type="hidden" name="icu" value="0">
-            <input type="hidden" name="long_term_care" value="0">
-            <input type="hidden" name="newborn" value="0">
-            <input type="hidden" name="pediatric_inpatient" value="0">
-            <input type="hidden" name="other" value="0">
-            <input type="hidden" name="day" value="2014-06-21">
-
-            <div class="saveline">
-              <input data-role="none" class="signUpBtnMid blockFloatRight" type="submit"
-                  value="Submit Patients" onclick="this.disabled=true,this.form.submit();">
-            </div>
-          </form>
+          <%= render 'form' %>
         </div>
         <div class="spacer2">
         </div>
@@ -100,7 +77,9 @@
       });
 
       $(document).ready( function() {
-        $(document).find('div.ui-loader.ui-corner-all.ui-body-a.ui-loader-default').html('')
+        $(document).find('div.ui-loader.ui-corner-all.ui-body-a.ui-loader-default').remove()
+        button = $(document).find('input.signUpBtnMid.blockFloatRight');
+        button.parent().replaceWith(button);
       });
 
       var section;
