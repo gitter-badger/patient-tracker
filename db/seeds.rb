@@ -23,52 +23,52 @@ Patient.create!(
     {
       encounter_type: 'Adult Medicine',
       user: doctor_1,
-      created_at: 5.days.ago
+      encountered_on: 5.days.ago
     },
     {
       encounter_type: 'Adult Medicine',
       user: doctor_1,
-      created_at: 4.days.ago
+      encountered_on: 4.days.ago
     },
     {
       encounter_type: 'Adult Medicine',
       user: doctor_1,
-      created_at: 3.days.ago
+      encountered_on: 3.days.ago
     },
     {
       encounter_type: 'Adult Medicine',
       user: doctor_1,
-      created_at: 2.days.ago
+      encountered_on: 2.days.ago
     },
     {
       encounter_type: 'ICU',
       user: doctor_1,
-      created_at: 2.days.ago
+      encountered_on: 2.days.ago
     },
     {
       encounter_type: 'Long-term Care',
       user: doctor_1,
-      created_at: 2.days.ago
+      encountered_on: 2.days.ago
     },
     {
       encounter_type: 'Long-term Care',
       user: doctor_2,
-      created_at: 2.days.ago
+      encountered_on: 2.days.ago
     },
     {
       encounter_type: 'Newborn',
       user: doctor_1,
-      created_at: 1.days.ago
+      encountered_on: 1.days.ago
     },
     {
       encounter_type: 'Pediatric ER',
       user: doctor_1,
-      created_at: 5.days.ago
+      encountered_on: 5.days.ago
     },
     {
       encounter_type: 'Pediatric ER',
       user: doctor_1,
-      created_at: 4.days.ago
+      encountered_on: 4.days.ago
     },
     {
       encounter_type: 'Pediatric Inpatient',
@@ -78,12 +78,22 @@ Patient.create!(
     {
       encounter_type: 'Pediatric Inpatient',
       user: doctor_2,
-      encountered_on: 2.days.ago
+      encountered_on: Date.today
     },
     {
       encounter_type: 'Pediatric Inpatient',
       user: doctor_2,
-      encountered_on: 2.days.ago
+      encountered_on: Date.today
+    },
+    {
+      encounter_type: 'Pediatric Inpatient',
+      user: doctor_2,
+      encountered_on: Date.today
+    },
+    {
+      encounter_type: 'Pediatric Inpatient',
+      user: doctor_2,
+      encountered_on: Date.today
     }
   ]
 )
