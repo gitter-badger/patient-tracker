@@ -24,17 +24,33 @@ class PatientsController < ApplicationController
   # POST /patients
   # POST /patients.json
   def create
-    @patient = Patient.new(patient_params)
+    # @patient = Patient.new()
 
-    respond_to do |format|
-      if @patient.save
-        format.html { redirect_to @patient, notice: 'Patient was successfully created.' }
-        format.json { render :show, status: :created, location: @patient }
-      else
-        format.html { render :new }
-        format.json { render json: @patient.errors, status: :unprocessable_entity }
-      end
+    adult_medicine_number = params[:adult_medicine].to_i
+    icu_number = params[:icu].to_i
+    long_term_care_number = params[:long_term_care].to_i
+    newborn_number = params[:newborn].to_i
+    pediatric_inpatient_number = params[:pediatric_inpatient].to_i
+    ActiveRecord::Base.transaction do
+      adult_medicine_number.times { Patient.create!(encounter_type: "Adult Medicine", user_id: 11) }
+      icu_number.times { Patient.create!(encounter_type: "ICU", user_id: 11) }
+      long_term_care_number.times { Patient.create!(encounter_type: "Long-term Care", user_id: 11) }
+      newborn_number.times { Patient.create!(encounter_type: "Newborn", user_id: 11) }
+      pediatric_inpatient_number.times { Patient.create!(encounter_type: "Pediatric Inpatient", user_id: 11) }
     end
+
+    @patients = Patient.all
+    render :index
+
+    # respond_to do |format|
+    #   if @patient.save
+    #     format.html { redirect_to @patient, notice: 'Patient was successfully created.' }
+    #     format.json { render :show, status: :created, location: @patient }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @patient.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /patients/1
