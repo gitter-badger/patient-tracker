@@ -994,15 +994,15 @@ background-color: #666666;
 }
 .thumb_small{
   box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 10px;
-  width: 85px;
-  height: 115px;
+  width: 115px;
+  height: 117px;
   /*margin-top: 30px;*/
 
 }
 .thumb_small img{
 
-  width: 85px;
-  height: 115px;
+  width: 115px;
+  height: 117px;
   /*margin-top: 30px;*/
 
 }
