@@ -28,6 +28,7 @@ class PatientsController < ApplicationController
 
     user_id = User.find_by(name: "Administrator").id
 
+    encountered_on = params[:encountered_on]
     adult_medicine_number = params[:adult_medicine].to_i
     icu_number = params[:icu].to_i
     long_term_care_number = params[:long_term_care].to_i
