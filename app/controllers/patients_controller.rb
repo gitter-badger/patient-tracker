@@ -29,11 +29,11 @@ class PatientsController < ApplicationController
     user_id = User.find_by(name: "Administrator").id
 
     encountered_on = params[:encountered_on]
-    adult_medicine_number = params[:adult_medicine].to_i
-    icu_number = params[:icu].to_i
-    long_term_care_number = params[:long_term_care].to_i
-    newborn_number = params[:newborn].to_i
-    pediatric_inpatient_number = params[:pediatric_inpatient].to_i
+    adult_medicine_number = params[:encounter_types][:adult_medicine].to_i
+    icu_number = params[:encounter_types][:icu].to_i
+    long_term_care_number = params[:encounter_types][:long_term_care].to_i
+    newborn_number = params[:encounter_types][:newborn].to_i
+    pediatric_inpatient_number = params[:encounter_types][:pediatric_inpatient].to_i
     ActiveRecord::Base.transaction do
       adult_medicine_number.times { Patient.create!(encounter_type: "Adult Medicine", encountered_on: encountered_on, user_id: user_id) }
       icu_number.times { Patient.create!(encounter_type: "ICU", encountered_on: encountered_on, user_id: user_id) }
