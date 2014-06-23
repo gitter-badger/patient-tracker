@@ -4,7 +4,7 @@ class PatientsController < ApplicationController
   # GET /patients
   # GET /patients.json
   def index
-    @patients = Patient.all
+    @patients = Patient.all.includes(:user).order(encountered_on: :desc).order('users.name ASC')
   end
 
   # GET /patients/1
@@ -42,8 +42,7 @@ class PatientsController < ApplicationController
       pediatric_inpatient_number.times { Patient.create!(encounter_type: "Pediatric Inpatient", encountered_on: encountered_on, user_id: user_id) }
     end
 
-    @patients = Patient.all
-    render :index
+    redirect_to patients_url
 
     # respond_to do |format|
     #   if @patient.save
