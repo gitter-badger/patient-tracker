@@ -26,17 +26,19 @@ class PatientsController < ApplicationController
   def create
     # @patient = Patient.new()
 
+    user_id = User.find_by(name: "Administrator").id
+
     adult_medicine_number = params[:adult_medicine].to_i
     icu_number = params[:icu].to_i
     long_term_care_number = params[:long_term_care].to_i
     newborn_number = params[:newborn].to_i
     pediatric_inpatient_number = params[:pediatric_inpatient].to_i
     ActiveRecord::Base.transaction do
-      adult_medicine_number.times { Patient.create!(encounter_type: "Adult Medicine", user_id: 11) }
-      icu_number.times { Patient.create!(encounter_type: "ICU", user_id: 11) }
-      long_term_care_number.times { Patient.create!(encounter_type: "Long-term Care", user_id: 11) }
-      newborn_number.times { Patient.create!(encounter_type: "Newborn", user_id: 11) }
-      pediatric_inpatient_number.times { Patient.create!(encounter_type: "Pediatric Inpatient", user_id: 11) }
+      adult_medicine_number.times { Patient.create!(encounter_type: "Adult Medicine", encountered_on: encountered_on, user_id: user_id) }
+      icu_number.times { Patient.create!(encounter_type: "ICU", encountered_on: encountered_on, user_id: user_id) }
+      long_term_care_number.times { Patient.create!(encounter_type: "Long-term Care", encountered_on: encountered_on, user_id: user_id) }
+      newborn_number.times { Patient.create!(encounter_type: "Newborn", encountered_on: encountered_on, user_id: user_id) }
+      pediatric_inpatient_number.times { Patient.create!(encounter_type: "Pediatric Inpatient", encountered_on: encountered_on, user_id: user_id) }
     end
 
     @patients = Patient.all
