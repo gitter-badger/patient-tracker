@@ -99,9 +99,8 @@
         current_value++;
         console.log(current_value);
 
-        $('input[name="' + section + '"]').val(current_value);
         $("#"+section).html(current_value);
-        $('input[name="' + section + '"]').val(current_value);
+        $('#encounter_types_' + section).val(current_value);
 
         $("#"+section).addClass( "gradient_blue" );
         $("#"+section).removeClass( "gradient_light" );
@@ -109,12 +108,12 @@
       }
 
       function calcTotal(){
-        var total =  parseInt($('input[name="adult_medicine"]').val()) +
-                     parseInt($('input[name="icu"]').val()) +
-                     parseInt($('input[name="long_term_care"]').val()) +
-                     parseInt($('input[name="newborn"]').val()) +
-                     parseInt($('input[name="pediatric_inpatient"]').val()) +
-                     parseInt($('input[name="other"]').val());
+        var total =  parseInt($('#encounter_types_adult_medicine').val()) +
+                     parseInt($('#encounter_types_icu').val()) +
+                     parseInt($('#encounter_types_long_term_care').val()) +
+                     parseInt($('#encounter_types_newborn').val()) +
+                     parseInt($('#encounter_types_pediatric_inpatient').val()) +
+                     parseInt($('#encounter_types_other').val());
         console.log (total);
         $("#total").html(total);
       }
