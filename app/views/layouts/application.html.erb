@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Patient Tracker</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <%= favicon_link_tag 'swedish.jpg' %>
-  <%= favicon_link_tag 'swedish.jpg', rel: 'apple-touch-icon', type: 'image/jpeg' %>
+  <head>
+    <title>Patient Tracker</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag 'swedish.jpg' %>
+    <%= favicon_link_tag 'swedish.jpg', rel: 'apple-touch-icon', type: 'image/jpeg' %>
 
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <meta name="description" content="The patient tracker allows resident physicians to
-  record a daily log of each type of patient encounter.">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="The patient tracker allows resident physicians to
+    record a daily log of each type of patient encounter.">
 
-  <%= stylesheet_link_tag 'gibson', media: 'all', 'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag 'hours_selector', media: 'all', 'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag 'jquery_mobile', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'jquery_ui', 'data-turbolinks-track' => true %>
-  <script>
-    $(document).bind("mobileinit", function () {
-      $.mobile.changePage.defaults.changeHash = false;
-      $.mobile.minScrollBack = 0;
-      $.mobile.ajaxEnabled = false;
-      $.mobile.linkBindingEnabled = true;
-      $.mobile.hashListeningEnabled = true;
-      $.mobile.pushStateEnabled = false;
-    });
-  </script>
-  <%= javascript_include_tag 'jquery_mobile', 'data-turbolinks-track' => true %>
-</head>
-<body>
+    <%= stylesheet_link_tag 'gibson', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag 'hours_selector', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag 'jquery_mobile', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'jquery_ui', 'data-turbolinks-track' => true %>
+    <script>
+      $(document).bind("mobileinit", function () {
+        $.mobile.changePage.defaults.changeHash = false;
+        $.mobile.minScrollBack = 0;
+        $.mobile.ajaxEnabled = false;
+        $.mobile.linkBindingEnabled = true;
+        $.mobile.hashListeningEnabled = true;
+        $.mobile.pushStateEnabled = false;
+      });
+    </script>
+    <%= javascript_include_tag 'jquery_mobile', 'data-turbolinks-track' => true %>
+  </head>
+  <body>
 
-<%= yield %>
+    <%= yield %>
 
-  <script>
-    $(document).ready( function() {
-      $('html').removeClass('ui-loading');
-      $('div.ui-loader.ui-corner-all.ui-body-a.ui-loader-default').remove()
-      button = $('input.signUpBtnMid.blockFloatRight');
-      button.parent().replaceWith(button);
-    });
-  </script>
-</body>
+    <script>
+      $(document).ready( function() {
+        $('html').removeClass('ui-loading');
+        $('div.ui-loader.ui-corner-all.ui-body-a.ui-loader-default').remove()
+        button = $('input.signUpBtnMid.blockFloatRight');
+        button.parent().replaceWith(button);
+      });
+    </script>
+  </body>
 </html>
