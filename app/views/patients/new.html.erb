@@ -82,13 +82,11 @@
   });
 
   var section;
-  var remaining = 24;
 
   function sectionSet(a){
     console.log(a);
     section = a;
     incrementNumber();
-    // showHours()
   }
 
   function incrementNumber(){
@@ -115,14 +113,6 @@
                  parseInt($('#encounter_types_other').val());
     console.log (total);
     $("#total").html(total);
-  }
-
-  function calcAvailable(){
-    var total =  parseInt($('input[name="sessions"]').val())+parseInt($('input[name="waiting"]').val())+parseInt($('input[name="eating"]').val())+parseInt($('input[name="sleeping"]').val())+parseInt($('input[name="parties"]').val());
-    console.log (total);
-    remaining = 24 - total;
-    $('input[name="other"]').val(remaining);
-    $("#other").html(remaining);
   }
 
   function setEncounteredOn(){
