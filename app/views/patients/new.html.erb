@@ -22,31 +22,31 @@
 
   <div class="wrap_section_narrow">
     <a href="#" data-transition="slide"
-        onclick="sectionSet(&#39;adult_medicine&#39;)" class="ui-link">
+        onclick="setSection(&#39;adult_medicine&#39;)" class="ui-link">
       <div class="lineitem_end">
         <div class="linelabel blockFloat">Adult Medicine</div>
         <div id="adult_medicine" class="linenumber gradient_light blockFloatRight">0</div>
       </div>
     </a>
-    <a href="#" data-transition="slide" onclick="sectionSet(&#39;icu&#39;)" class="ui-link">
+    <a href="#" data-transition="slide" onclick="setSection(&#39;icu&#39;)" class="ui-link">
       <div class="lineitem">
         <div class="linelabel blockFloat">ICU</div>
         <div id="icu" class="linenumber gradient_light blockFloatRight">0</div>
       </div>
     </a>
-    <a href="#" data-transition="slide" onclick="sectionSet(&#39;long_term_care&#39;)" class="ui-link">
+    <a href="#" data-transition="slide" onclick="setSection(&#39;long_term_care&#39;)" class="ui-link">
       <div class="lineitem">
         <div class="linelabel blockFloat">Long-term Care</div>
         <div id="long_term_care" class="linenumber gradient_light blockFloatRight">0</div>
       </div>
     </a>
-    <a href="#" data-transition="slide" onclick="sectionSet(&#39;newborn&#39;)" class="ui-link">
+    <a href="#" data-transition="slide" onclick="setSection(&#39;newborn&#39;)" class="ui-link">
       <div class="lineitem">
         <div class="linelabel blockFloat">Newborn</div>
         <div id="newborn" class="linenumber gradient_light blockFloatRight">0</div>
       </div>
     </a>
-    <a href="#" data-transition="slide" onclick="sectionSet(&#39;pediatric_inpatient&#39;)" class="ui-link">
+    <a href="#" data-transition="slide" onclick="setSection(&#39;pediatric_inpatient&#39;)" class="ui-link">
       <div class="lineitem">
         <div class="linelabel blockFloat">Pediatric Inpatient</div>
         <div id="pediatric_inpatient" class="linenumber gradient_light blockFloatRight">0</div>
@@ -80,7 +80,7 @@
     $('#encountered_on').val(date);
   }
 
-  function sectionSet(a){
+  function setSection(a){
     console.log(a);
     section = a;
     incrementNumber();
