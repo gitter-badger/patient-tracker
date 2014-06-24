@@ -121,30 +121,4 @@
 
     $('#encountered_on').val(date);
   }
-
-  function getVars(){
-
-    var locate = String(window.location.href);
-
-    console.log(locate);
-    console.log(locate.indexOf("conf="));
-
-    if (locate.indexOf("conf=")!=-1)
-    {
-      theleft = locate.indexOf("conf=") + 5;
-      theright = locate.length;
-      console.log(locate.substring(theleft, theright));
-      document.getElementById('topictitle').innerHTML = "What is the real cost of " +
-        locate.substring(theleft, theright) + "?";
-      conffield.value = locate.substring(theleft, theright);
-    }else{
-
-      document.getElementById('topictitle').innerHTML = "What is the real cost of this conference?";
-      conffield.value = "this conference";
-    }
-
-  }
-  function gotoPage() {
-    console.log(loc);
-  }
 </script>
