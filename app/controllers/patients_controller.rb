@@ -28,8 +28,8 @@ class PatientsController < ApplicationController
 
     user_id = User.find_by(name: "Administrator").id
 
-    encountered_on = params[:encountered_on]
-    encounter_types = [:adult_inpatient_and_ed, :adult_icu, :pediatric_inpatient, :pediatric_newborn, :pediatric_ed, :continuity_inpatient, :continuity_external]
+    STDERR.puts "encountered_on: *********" + encountered_on + "*********"
+    STDERR.puts "encounter_types: *********" + encounter_types.to_s + "*********"
 
     # adult_medicine_number = params[:encounter_types][:adult_medicine].to_i
     # icu_number = params[:encounter_types][:icu].to_i
@@ -37,8 +37,8 @@ class PatientsController < ApplicationController
     # newborn_number = params[:encounter_types][:newborn].to_i
     # pediatric_inpatient_number = params[:encounter_types][:pediatric_inpatient].to_i
     ActiveRecord::Base.transaction do
-      encounter_types.each do |type|
-        params[:encounter_types][type].to_i.times {Patient.create!(encounter_type: type.to_s.humanize(capitalize: false), encountered_on: encountered_on, user_id: user_id)}
+      encounter_types.each do |type, number|
+        number.to_i.times {Patient.create!(encounter_type: type.to_s.humanize(capitalize: false), encountered_on: encountered_on, user_id: user_id)}
       end
       # adult_medicine_number.times { Patient.create!(encounter_type: "Adult Medicine", encountered_on: encountered_on, user_id: user_id) }
       # icu_number.times { Patient.create!(encounter_type: "ICU", encountered_on: encountered_on, user_id: user_id) }
@@ -93,5 +93,14 @@ class PatientsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def patient_params
       params.require(:patient).permit(:encounter_type)
+    end
+
+    # Require that params[:encountered_on] is not empty and return the value
+    def encountered_on
+      params.require(:encountered_on)
+    end
+
+    def encounter_types
+      params.require(:encounter_types).permit(:adult_inpatient_and_ed, :adult_icu, :pediatric_inpatient, :pediatric_newborn, :pediatric_ed, :continuity_inpatient, :continuity_external)
     end
 end
