@@ -64,16 +64,6 @@
 <%= render 'hours_selector' %>
 
 <script>
-  $( ".hourline" ).bind( "tap", function() {
-    console.log($( this ).text().replace(/\s+/g, " "));
-    var str = $( this ).text().replace(/\s+/g, " ");
-    var ret = str.split(" ");
-    var str1 = ret[0];
-    var str2 = ret[1];
-    console.log(ret);
-    setHours(str2);
-  });
-
   $(document).ready( function() {
     $('html').removeClass('ui-loading');
     $('div.ui-loader.ui-corner-all.ui-body-a.ui-loader-default').remove()
