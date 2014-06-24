@@ -19,12 +19,12 @@
   <div class="field">
     <input type="hidden" name="hidden[raven]" value="true">
     <%= hidden_field_tag(:encountered_on, Date.today) %>
-    <%= hidden_field(:encounter_types, :adult_medicine, value: "0") %>
-    <%= hidden_field(:encounter_types, :icu, value: "0") %>
-    <%= hidden_field(:encounter_types, :long_term_care, value: "0") %>
-    <%= hidden_field(:encounter_types, :newborn, value: "0") %>
-    <%= hidden_field(:encounter_types, :pediatric_inpatient, value: "0") %>
-    <%= hidden_field(:encounter_types, :other, value: "0") %>
+
+    <% encounter_types = ['adult_inpatient_and_ed', 'adult_icu', 'pediatric_inpatient',
+    'pediatric_newborn', 'pediatric_ed', 'continuity_inpatient', 'continuity_external'] %>
+    <% encounter_types.each do |encounter_type| %>
+      <%= hidden_field(:encounter_types, encounter_type.to_sym, value: "0") %>
+    <% end %>
   </div>
   <div class="actions saveline">
     <%= submit_tag('Submit Patients', class: 'signUpBtnMid blockFloatRight') %>

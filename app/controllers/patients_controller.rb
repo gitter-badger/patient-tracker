@@ -29,17 +29,22 @@ class PatientsController < ApplicationController
     user_id = User.find_by(name: "Administrator").id
 
     encountered_on = params[:encountered_on]
-    adult_medicine_number = params[:encounter_types][:adult_medicine].to_i
-    icu_number = params[:encounter_types][:icu].to_i
-    long_term_care_number = params[:encounter_types][:long_term_care].to_i
-    newborn_number = params[:encounter_types][:newborn].to_i
-    pediatric_inpatient_number = params[:encounter_types][:pediatric_inpatient].to_i
+    encounter_types = [:adult_inpatient_and_ed, :adult_icu, :pediatric_inpatient, :pediatric_newborn, :pediatric_ed, :continuity_inpatient, :continuity_external]
+
+    # adult_medicine_number = params[:encounter_types][:adult_medicine].to_i
+    # icu_number = params[:encounter_types][:icu].to_i
+    # long_term_care_number = params[:encounter_types][:long_term_care].to_i
+    # newborn_number = params[:encounter_types][:newborn].to_i
+    # pediatric_inpatient_number = params[:encounter_types][:pediatric_inpatient].to_i
     ActiveRecord::Base.transaction do
-      adult_medicine_number.times { Patient.create!(encounter_type: "Adult Medicine", encountered_on: encountered_on, user_id: user_id) }
-      icu_number.times { Patient.create!(encounter_type: "ICU", encountered_on: encountered_on, user_id: user_id) }
-      long_term_care_number.times { Patient.create!(encounter_type: "Long-term Care", encountered_on: encountered_on, user_id: user_id) }
-      newborn_number.times { Patient.create!(encounter_type: "Newborn", encountered_on: encountered_on, user_id: user_id) }
-      pediatric_inpatient_number.times { Patient.create!(encounter_type: "Pediatric Inpatient", encountered_on: encountered_on, user_id: user_id) }
+      encounter_types.each do |type|
+        params[:encounter_types][type].to_i.times {Patient.create!(encounter_type: type.to_s.humanize(capitalize: false), encountered_on: encountered_on, user_id: user_id)}
+      end
+      # adult_medicine_number.times { Patient.create!(encounter_type: "Adult Medicine", encountered_on: encountered_on, user_id: user_id) }
+      # icu_number.times { Patient.create!(encounter_type: "ICU", encountered_on: encountered_on, user_id: user_id) }
+      # long_term_care_number.times { Patient.create!(encounter_type: "Long-term Care", encountered_on: encountered_on, user_id: user_id) }
+      # newborn_number.times { Patient.create!(encounter_type: "Newborn", encountered_on: encountered_on, user_id: user_id) }
+      # pediatric_inpatient_number.times { Patient.create!(encounter_type: "Pediatric Inpatient", encountered_on: encountered_on, user_id: user_id) }
     end
 
     redirect_to patients_url

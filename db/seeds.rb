@@ -6,6 +6,17 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+ENCOUNTER_TYPES = [
+                    'adult inpatient and ed',
+                    'adult icu',
+                    'pediatric inpatient',
+                    'pediatric newborn',
+                    'pediatric ed',
+                    'continuity inpatient',
+                    'continuity external'
+                  ]
+
+
 User.destroy_all
 
 admin    = User.create!({name: 'Administrator',  role: 'Admin' })
@@ -14,88 +25,11 @@ doctor_2 = User.create!({name: 'Doctor Jane',    role: 'Doctor'})
 
 puts "Created #{User.count} users!"
 
-
-
 Patient.destroy_all
 
-Patient.create!(
-  [
-    {
-      encounter_type: 'Adult Medicine',
-      user: doctor_1,
-      encountered_on: 5.days.ago
-    },
-    {
-      encounter_type: 'Adult Medicine',
-      user: doctor_1,
-      encountered_on: 4.days.ago
-    },
-    {
-      encounter_type: 'Adult Medicine',
-      user: doctor_1,
-      encountered_on: 3.days.ago
-    },
-    {
-      encounter_type: 'Adult Medicine',
-      user: doctor_1,
-      encountered_on: 2.days.ago
-    },
-    {
-      encounter_type: 'ICU',
-      user: doctor_1,
-      encountered_on: 2.days.ago
-    },
-    {
-      encounter_type: 'Long-term Care',
-      user: doctor_1,
-      encountered_on: 2.days.ago
-    },
-    {
-      encounter_type: 'Long-term Care',
-      user: doctor_2,
-      encountered_on: 2.days.ago
-    },
-    {
-      encounter_type: 'Newborn',
-      user: doctor_1,
-      encountered_on: 1.days.ago
-    },
-    {
-      encounter_type: 'Pediatric ER',
-      user: doctor_1,
-      encountered_on: 5.days.ago
-    },
-    {
-      encounter_type: 'Pediatric ER',
-      user: doctor_1,
-      encountered_on: 4.days.ago
-    },
-    {
-      encounter_type: 'Pediatric Inpatient',
-      user: doctor_1,
-      encountered_on: 1.day.ago
-    },
-    {
-      encounter_type: 'Pediatric Inpatient',
-      user: doctor_2,
-      encountered_on: Date.today
-    },
-    {
-      encounter_type: 'Pediatric Inpatient',
-      user: doctor_2,
-      encountered_on: Date.today
-    },
-    {
-      encounter_type: 'Pediatric Inpatient',
-      user: doctor_2,
-      encountered_on: Date.today
-    },
-    {
-      encounter_type: 'Pediatric Inpatient',
-      user: doctor_2,
-      encountered_on: Date.today
-    }
-  ]
-)
+ENCOUNTER_TYPES.each do |type|
+  Patient.create!(encounter_type: type, encountered_on: Date.today, user: doctor_1)
+  Patient.create!(encounter_type: type, encountered_on: 7.days.ago, user: doctor_2)
+end
 
 puts "Created #{Patient.count} patients!"

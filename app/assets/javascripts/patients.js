@@ -33,12 +33,15 @@ function incrementNumber(){
 }
 
 function calcTotal(){
-  var total =  parseInt($('#encounter_types_adult_medicine').val()) +
-               parseInt($('#encounter_types_icu').val()) +
-               parseInt($('#encounter_types_long_term_care').val()) +
-               parseInt($('#encounter_types_newborn').val()) +
-               parseInt($('#encounter_types_pediatric_inpatient').val()) +
-               parseInt($('#encounter_types_other').val());
+  encounter_types = ['adult_inpatient_and_ed', 'adult_icu', 'pediatric_inpatient',
+  'pediatric_newborn', 'pediatric_ed', 'continuity_inpatient', 'continuity_external']
+  var total =  parseInt($('#encounter_types_' + encounter_types[0]).val()) +
+               parseInt($('#encounter_types_' + encounter_types[1]).val()) +
+               parseInt($('#encounter_types_' + encounter_types[2]).val()) +
+               parseInt($('#encounter_types_' + encounter_types[3]).val()) +
+               parseInt($('#encounter_types_' + encounter_types[4]).val()) +
+               parseInt($('#encounter_types_' + encounter_types[5]).val()) +
+               parseInt($('#encounter_types_' + encounter_types[6]).val());
   console.log (total);
   $("#total").html(total);
 }
