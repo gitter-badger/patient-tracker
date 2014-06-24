@@ -7,4 +7,9 @@ class CreateUsers < ActiveRecord::Migration
       t.timestamps
     end
   end
+
+  def self.down
+    #Do not allow the users table to be removed
+    raise ActiveRecord::IrreversibleMigration
+  end
 end
