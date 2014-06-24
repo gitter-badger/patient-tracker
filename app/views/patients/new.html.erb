@@ -64,13 +64,6 @@
 <%= render 'hours_selector' %>
 
 <script>
-  $(document).ready( function() {
-    $('html').removeClass('ui-loading');
-    $('div.ui-loader.ui-corner-all.ui-body-a.ui-loader-default').remove()
-    button = $('input.signUpBtnMid.blockFloatRight');
-    button.parent().replaceWith(button);
-  });
-
   var section;
 
   function setEncounteredOn(){
