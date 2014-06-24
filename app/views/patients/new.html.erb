@@ -122,30 +122,6 @@
     $('#encountered_on').val(date);
   }
 
-  function showHours(){
-    $("#instr").html("Select how many hours you spent on " + section);
-
-    if(parseInt($('input[name="' + section + '"]').val())>(remaining) ){
-
-      var limit = parseInt($('input[name="' + section + '"]').val())+remaining;
-
-    }else{
-
-      var limit = remaining;
-
-    }
-    console.log("limit="+limit);
-    for (var i = 1; i < 25; i += 1) {
-
-      if (i<=(limit)){
-        $("#h"+(i)).css( "display", "block" );
-      }else{
-        $("#h"+(i)).css( "display", "none" );
-
-      }
-    }
-  }
-
   function setHours(a){
     console.log(section);
     console.log (a);
