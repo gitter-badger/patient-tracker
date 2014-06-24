@@ -83,6 +83,13 @@
 
   var section;
 
+  function setEncounteredOn(){
+    var date = $('#date').val();
+    console.log(date);
+
+    $('#encountered_on').val(date);
+  }
+
   function sectionSet(a){
     console.log(a);
     section = a;
@@ -113,12 +120,5 @@
                  parseInt($('#encounter_types_other').val());
     console.log (total);
     $("#total").html(total);
-  }
-
-  function setEncounteredOn(){
-    var date = $('#date').val();
-    console.log(date);
-
-    $('#encountered_on').val(date);
   }
 </script>
