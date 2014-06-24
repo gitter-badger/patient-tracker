@@ -19,9 +19,9 @@ ENCOUNTER_TYPES = [
 
 User.destroy_all
 
-admin    = User.create!({name: 'Administrator',  role: 'Admin' })
-doctor_1 = User.create!({name: 'Doctor Joe',     role: 'Doctor'})
-doctor_2 = User.create!({name: 'Doctor Jane',    role: 'Doctor'})
+admin    = User.create!({ name: 'Developer',   role: 'Admin',  email: 'developer@example.com', password: 'password' })
+doctor_1 = User.create!({ name: 'Doctor Joe',  role: 'Doctor', email: 'joe@example.com',       password: 'password' })
+doctor_2 = User.create!({ name: 'Doctor Jane', role: 'Doctor', email: 'jane@example.com',      password: 'password' })
 
 puts "Created #{User.count} users!"
 
