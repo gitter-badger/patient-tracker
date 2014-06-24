@@ -122,18 +122,6 @@
     $('#encountered_on').val(date);
   }
 
-  function setHours(a){
-    console.log(section);
-    console.log (a);
-    $('input[name="' + section + '"]').val(a);
-    $("#"+section).html(a);
-    $('input[name="' + section + '"]').val(a);
-
-    $("#"+section).addClass( "gradient_blue" );
-    $("#"+section).removeClass( "gradient_light" );
-    calcAvailable();
-  }
-
   function generateUUID() {
     var d = new Date().getTime();
     var uuid = 'xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
