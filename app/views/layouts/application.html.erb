@@ -17,7 +17,6 @@
     <%= stylesheet_link_tag 'gibson', media: 'all', 'data-turbolinks-track' => true %>
     <%= stylesheet_link_tag 'hours_selector', media: 'all', 'data-turbolinks-track' => true %>
     <%= stylesheet_link_tag 'jquery_mobile', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'jquery_ui', 'data-turbolinks-track' => true %>
     <script>
       $(document).bind("mobileinit", function () {
         $.mobile.changePage.defaults.changeHash = false;
@@ -28,7 +27,6 @@
         $.mobile.pushStateEnabled = false;
       });
     </script>
-    <%= javascript_include_tag 'jquery_mobile', 'data-turbolinks-track' => true %>
   </head>
   <body>
 
