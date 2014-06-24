@@ -1,29 +1,57 @@
-<h1>Listing patients</h1>
+<div data-role="page" id="index" data-url="index" tabindex="0"
+class="ui-page ui-page-theme-a ui-page-active">
+  <div class="fullwidth">
+    <div class="wrap_section_narrow_top">
+      <div class="row">
+        <div class="span_s">
+          <div class="thumb_small">
+            <%= image_tag 'swedish.jpg' %>
+          </div>
+        </div>
+        <div id="topictitle" class="question">
+          Patient Encounters
+        </div>
+      </div>
+    </div>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Encounter Type</th>
-      <th>Encounter Date</th>
-      <th>Encountered By</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="wrap_section_narrow">
+    <div class="spacer">
+    </div>
+  </div>
 
-  <tbody>
-    <% @patients.each do |patient| %>
-      <tr>
-        <td><%= patient.encounter_type %></td>
-        <td><%= patient.encountered_on %></td>
-        <th><%= patient.user.present? ? patient.user.name : "Unknown" %></th>
-        <td><%= link_to 'Show', patient %></td>
-        <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
-        <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="wrap_section_narrow">
+    <table data-role="table" id="patient_encounters_table" class="ui-responsive">
+      <thead>
+        <tr class="fullwidth">
+          <th>Encounter Type</th>
+          <th>Encounter Date</th>
+          <th>Encountered By</th>
+          <th>Submitted On</th>
+        </tr>
+      </thead>
 
-<br>
+      <tbody>
+        <% @patients.each do |patient| %>
+          <tr class="lineitem fullwidth">
+            <td><%= patient.encounter_type %></td>
+            <td><%= patient.encountered_on %></td>
+            <td><%= patient.user.present? ? patient.user.name : "Unknown" %></th>
+            <td><%= patient.created_at.to_date %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-<%= link_to 'New Patient', new_patient_path %>
+    <br>
+    <%= link_to 'New Patient', new_patient_path %>
+  </div>
+
+  <div class="form-block">
+  </div>
+  <div class="spacer">
+  </div>
+</div>
+
+
+
