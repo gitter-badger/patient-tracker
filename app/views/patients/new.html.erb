@@ -122,29 +122,6 @@
     $('#encountered_on').val(date);
   }
 
-  function generateUUID() {
-    var d = new Date().getTime();
-    var uuid = 'xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-      var r = (d + Math.random()*16)%16 | 0;
-      d = Math.floor(d/16);
-      return (c=='x' ? r : (r&0x7|0x8)).toString(16);
-    });
-    guidfield.value=uuid;
-    $('input[name="hidden[return]"]').val("/my_roi/"+uuid)
-
-    loc = uuid;
-    var now = new Date();
-
-    var day = ("0" + now.getDate()).slice(-2);
-    var month = ("0" + (now.getMonth() + 1)).slice(-2);
-
-    var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
-    $('input[name="day"]').val(today);
-    getVars();
-
-  };
-
-
   function getVars(){
 
     var locate = String(window.location.href);
