@@ -19,17 +19,15 @@ ENCOUNTER_TYPES = [
 
 User.destroy_all
 
-admin    = User.create!({ name: 'Developer',   role: 'Admin',  email: 'developer@example.com', password: 'password' })
-doctor_1 = User.create!({ name: 'Doctor Joe',  role: 'Doctor', email: 'joe@example.com',       password: 'password' })
-doctor_2 = User.create!({ name: 'Doctor Jane', role: 'Doctor', email: 'jane@example.com',      password: 'password' })
+developer = User.create!({ name: 'Developer',   role: 'Developer',  email: ENV['SEED_USER_EMAIL'], password: ENV['SEED_USER_PASSWORD'] })
 
 puts "Created #{User.count} users!"
 
 Patient.destroy_all
 
 ENCOUNTER_TYPES.each do |type|
-  Patient.create!(encounter_type: type, encountered_on: Date.today, user: doctor_1)
-  Patient.create!(encounter_type: type, encountered_on: 7.days.ago, user: doctor_2)
+  Patient.create!(encounter_type: type, encountered_on: Date.today, user: developer)
+  Patient.create!(encounter_type: type, encountered_on: 7.days.ago, user: developer)
 end
 
 puts "Created #{Patient.count} patients!"
