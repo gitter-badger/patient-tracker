@@ -7,6 +7,8 @@ gem 'rails', '4.1.1'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
+# Simple, Heroku-friendly Rails app configuration using ENV and a single YAML file
+gem 'figaro', '>= 1.0.0.rc1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # Use jquery as the JavaScript library
