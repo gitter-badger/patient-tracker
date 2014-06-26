@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<% if policy(@patient).show? %>
 <p>
   <strong>Encounter Type:</strong>
   <%= @patient.encounter_type %>
@@ -8,6 +9,11 @@
   <strong>Doctor:</strong>
   <%= @patient.user.present? ? @patient.user.name : "Unknown" %>
 </p>
+<% else %>
+  <p>You are not authorized to view this encounter.</p>
+<% end %>
 
-<%= link_to 'Edit', edit_patient_path(@patient) %> |
+<% if policy(@patient).edit? %>
+  <%= link_to 'Edit', edit_patient_path(@patient) %> |
+<% end %>
 <%= link_to 'Back', patients_path %>
