@@ -19,7 +19,7 @@ ENCOUNTER_TYPES = [
 
 User.destroy_all
 
-developer = User.create!({ name: 'Developer',   role: 'Developer',  email: ENV['SEED_USER_EMAIL'], password: ENV['SEED_USER_PASSWORD'] })
+developer = User.create!({ first_name: 'Developer', last_name: 'Developer', role: 'Developer',  email: ENV['SEED_USER_EMAIL'], password: ENV['SEED_USER_PASSWORD'] })
 
 puts "Created #{User.count} users!"
 
