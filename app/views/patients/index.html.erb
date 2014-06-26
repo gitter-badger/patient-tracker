@@ -24,25 +24,26 @@ class="ui-page ui-page-theme-a ui-page-active">
     <table data-role="table" id="patient_encounters_table" class="ui-responsive">
       <thead>
         <tr class="fullwidth">
-          <th>Type</th>
-          <th>Date</th>
           <th>Resident</th>
+          <th>Type</th>
+          <th>Encountered</th>
           <th>Submitted</th>
         </tr>
       </thead>
 
       <tbody>
         <% @patients.each do |patient| %>
-          <tr class="lineitem fullwidth">
-            <td><%= patient.encounter_type %></td>
-            <td><%= patient.encountered_on %></td>
-            <td><%= patient.user.present? ? patient.user.name : "Unknown" %></th>
-            <td><%= patient.created_at.to_date %></td>
-          </tr>
+          <% if policy(patient).index? %>
+            <tr class="lineitem fullwidth">
+              <td><%= patient.user.present? ? patient.user.name : "Unknown" %></th>
+              <td><%= patient.encounter_type %></td>
+              <td><%= patient.encountered_on %></td>
+              <td><%= patient.created_at.to_date %></td>
+            </tr>
+          <% end %>
         <% end %>
       </tbody>
     </table>
-
     <br>
     <%= link_to 'New Patient', new_patient_path %>
   </div>
