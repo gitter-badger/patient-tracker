@@ -13,6 +13,8 @@ gem 'figaro', '>= 1.0.0.rc1'
 gem 'jbuilder', '~> 2.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails', '~> 3.1.0'
+# Use pundit for minimal authorization through OO design and pure Ruby classes
+gem 'pundit', '~> 0.2.3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
