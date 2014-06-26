@@ -26,14 +26,9 @@ class PatientsController < ApplicationController
   def create
     # @patient = Patient.new()
 
-    user_id = User.find_by(name: "Administrator").id
-
-    STDERR.puts "encountered_on: *********" + encountered_on + "*********"
-    STDERR.puts "encounter_types: *********" + encounter_types.to_s + "*********"
-
     ActiveRecord::Base.transaction do
       encounter_types.each do |type, number|
-        number.to_i.times {Patient.create!(encounter_type: type.to_s.humanize(capitalize: false), encountered_on: encountered_on, user_id: user_id)}
+        number.to_i.times {Patient.create!(encounter_type: type.to_s.humanize(capitalize: false), encountered_on: encountered_on, user: current_user)}
       end
     end
 
