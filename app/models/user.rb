@@ -4,15 +4,16 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :patients
+  has_many :patients, dependent: :destroy
 
-  before_save :set_name, :set_role
+  before_save :set_default_name, :set_default_role
 
-  def set_name
-    self.name = first_name + ' ' + last_name
-  end
+  private
+    def set_default_name
+      self.name = first_name + ' ' + last_name
+    end
 
-  def set_role
-    self.role = 'Resident'
-  end
+    def set_default_role
+      self.role = 'Resident'
+    end
 end
