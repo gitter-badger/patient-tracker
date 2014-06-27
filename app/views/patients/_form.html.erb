@@ -1,4 +1,4 @@
-<%= form_tag("/patients", method: "post", class: 'new_patient form-horizontal', role: 'form') do %>
+<%= form_tag("/patients", method: "post", class: 'new_patient form-horizontal', role: 'form', data: {ajax: false}) do %>
   <% if @patient.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
@@ -27,6 +27,6 @@
     <% end %>
   </div>
   <div class="actions saveline">
-    <%= submit_tag('Submit Patients', class: 'signUpBtnMid blockFloatRight') %>
+    <%= submit_tag('Submit', class: 'signUpBtnMid blockFloatRight') %>
   </div>
 <% end %>
