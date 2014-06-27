@@ -34,43 +34,43 @@
     </div>
 
     <div class="wrap_section_narrow">
-      <a href="#" data-transition="slide" onclick="setSection('adult_inpatient_and_ed')" class="ui-link">
+      <a href="#" data-transition="slide" onclick="incrementEncounterType('adult_inpatient_and_ed')" class="ui-link">
         <div class="lineitem_end">
           <div class="linelabel blockFloat"><strong>Adult:</strong> Inpatient & ED</div>
           <div id="adult_inpatient_and_ed" class="linenumber gradient_light blockFloatRight">0</div>
         </div>
       </a>
-      <a href="#" data-transition="slide" onclick="setSection('adult_icu')" class="ui-link">
+      <a href="#" data-transition="slide" onclick="incrementEncounterType('adult_icu')" class="ui-link">
         <div class="lineitem">
           <div class="linelabel blockFloat"><strong>Adult:</strong> ICU</div>
           <div id="adult_icu" class="linenumber gradient_light blockFloatRight">0</div>
         </div>
       </a>
-      <a href="#" data-transition="slide" onclick="setSection('pediatric_inpatient')" class="ui-link">
+      <a href="#" data-transition="slide" onclick="incrementEncounterType('pediatric_inpatient')" class="ui-link">
         <div class="lineitem">
           <div class="linelabel blockFloat"><strong>Pediatric:</strong> Inpatient</div>
           <div id="pediatric_inpatient" class="linenumber gradient_light blockFloatRight">0</div>
         </div>
       </a>
-      <a href="#" data-transition="slide" onclick="setSection('pediatric_newborn')" class="ui-link">
+      <a href="#" data-transition="slide" onclick="incrementEncounterType('pediatric_newborn')" class="ui-link">
         <div class="lineitem">
           <div class="linelabel blockFloat"><strong>Pediatric:</strong> Newborn</div>
           <div id="pediatric_newborn" class="linenumber gradient_light blockFloatRight">0</div>
         </div>
       </a>
-      <a href="#" data-transition="slide" onclick="setSection('pediatric_ed')" class="ui-link">
+      <a href="#" data-transition="slide" onclick="incrementEncounterType('pediatric_ed')" class="ui-link">
         <div class="lineitem">
           <div class="linelabel blockFloat"><strong>Pediatric:</strong> ED</div>
           <div id="pediatric_ed" class="linenumber gradient_light blockFloatRight">0</div>
         </div>
       </a>
-      <a href="#" data-transition="slide" onclick="setSection('continuity_inpatient')" class="ui-link">
+      <a href="#" data-transition="slide" onclick="incrementEncounterType('continuity_inpatient')" class="ui-link">
         <div class="lineitem">
           <div class="linelabel blockFloat"><strong>Continuity:</strong> Inpatient</div>
           <div id="continuity_inpatient" class="linenumber gradient_light blockFloatRight">0</div>
         </div>
       </a>
-      <a href="#" data-transition="slide" onclick="setSection('continuity_external')" class="ui-link">
+      <a href="#" data-transition="slide" onclick="incrementEncounterType('continuity_external')" class="ui-link">
         <div class="lineitem">
           <div class="linelabel blockFloat"><strong>Continuity:</strong> External</div>
           <div id="continuity_external" class="linenumber gradient_light blockFloatRight">0</div>
@@ -79,8 +79,17 @@
       <div class="form-block">
         <%= render 'form' %>
       </div>
-      <div class="spacer2">
+    </div>
+    <div class="wrap_section_narrow" style="background-color: none">
+      <div id="buttonsLine"class="row">
+        <%= submit_tag('Reset', class: 'resetBtnMid blockFloat', onclick: "resetEncounters()") %>
+        <div id="totalPatientsBlock">
+          <div id="totalPatientsLabel" class="totallabel blockFloat">Total: </div>
+          <div id="total" class="totalnumber blockFloat">0</div>
+        </div>
       </div>
+    </div>
+    <div class="spacer2">
     </div>
   <% end %>
 </div>
