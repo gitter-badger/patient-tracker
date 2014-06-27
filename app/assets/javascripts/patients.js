@@ -2,7 +2,8 @@
 // # All this logic will automatically be available in application.js.
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 
-var section;
+var encounter_types = ['adult_inpatient_and_ed', 'adult_icu', 'pediatric_inpatient',
+  'pediatric_newborn', 'pediatric_ed', 'continuity_inpatient', 'continuity_external'];
 
 function setEncounteredOn(){
   var date = $('#date').val();
@@ -11,13 +12,16 @@ function setEncounteredOn(){
   $('#encountered_on').val(date);
 }
 
-function setSection(a){
-  console.log(a);
-  section = a;
-  incrementNumber();
+function resetEncounters(){
+  for (i = 0; i < encounter_types.length; i++) {
+    var encounter_type = encounter_types[i];
+    $("#" + encounter_type).html(0);
+    $('#encounter_types_' + encounter_type).val(0);
+    $("#total").html(0);
+  }
 }
 
-function incrementNumber(){
+function incrementEncounterType(section){
   console.log(section);
   current_value = parseInt( $('#' + section).text() );
   console.log(current_value);
@@ -33,8 +37,6 @@ function incrementNumber(){
 }
 
 function calcTotal(){
-  encounter_types = ['adult_inpatient_and_ed', 'adult_icu', 'pediatric_inpatient',
-  'pediatric_newborn', 'pediatric_ed', 'continuity_inpatient', 'continuity_external']
   var total =  parseInt($('#encounter_types_' + encounter_types[0]).val()) +
                parseInt($('#encounter_types_' + encounter_types[1]).val()) +
                parseInt($('#encounter_types_' + encounter_types[2]).val()) +
