@@ -13,15 +13,13 @@ class="ui-page ui-page-theme-a ui-page-active">
         </div>
       </div>
     </div>
-    <div class="wrap_section_narrow">
-      <% flash.each do |name, msg| -%>
-        <%= content_tag :p, msg, id: name, class: name %>
-      <% end -%>
-    </div>
   </div>
 
   <div class="wrap_section_narrow">
     <div class="spacer">
+      <% flash.each do |name, msg| -%>
+        <%= content_tag :p, msg, id: name, class: name %>
+      <% end -%>
     </div>
   </div>
 
