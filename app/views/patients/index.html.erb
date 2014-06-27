@@ -49,11 +49,14 @@ class="ui-page ui-page-theme-a ui-page-active">
         </tbody>
       </table>
     <% else %>
-      <div class="spacer">You must be signed in to view this page.</div>
+      <div class="spacer">You must <%= link_to 'sign in', new_user_session_path %> to view this page.</div>
     <% end %>
     <br>
-    <% if policy(@patients).create? %>
-      <%= link_to 'Add Encounters', new_patient_path %>
+    <% if current_user %>
+      <% if policy(@patients).create? %>
+        <%= link_to 'Add Encounters', new_patient_path %> |
+      <% end %>
+      <%= link_to 'Sign Out', destroy_user_session_path(user_session), method: "delete" %>
     <% end %>
   </div>
 
