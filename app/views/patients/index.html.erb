@@ -21,29 +21,33 @@ class="ui-page ui-page-theme-a ui-page-active">
   </div>
 
   <div class="wrap_section_narrow">
-    <table data-role="table" id="patient_encounters_table" class="ui-responsive">
-      <thead>
-        <tr class="fullwidth">
-          <th>Resident</th>
-          <th>Type</th>
-          <th>Encountered</th>
-          <th>Submitted</th>
-        </tr>
-      </thead>
+    <% if current_user %>
+      <table data-role="table" id="patient_encounters_table" class="ui-responsive">
+        <thead>
+          <tr class="fullwidth">
+            <th>Resident</th>
+            <th>Type</th>
+            <th>Encountered</th>
+            <th>Submitted</th>
+          </tr>
+        </thead>
 
-      <tbody>
-        <% @patients.each do |patient| %>
-          <% if policy(patient).index? %>
-            <tr class="lineitem fullwidth">
-              <td><%= patient.user.present? ? patient.user.name : "Unknown" %></th>
-              <td><%= patient.encounter_type %></td>
-              <td><%= patient.encountered_on %></td>
-              <td><%= patient.created_at.to_date %></td>
-            </tr>
+        <tbody>
+          <% @patients.each do |patient| %>
+            <% if policy(patient).index? %>
+              <tr class="lineitem fullwidth">
+                <td><%= patient.user.present? ? patient.user.name : "Unknown" %></th>
+                <td><%= patient.encounter_type %></td>
+                <td><%= patient.encountered_on %></td>
+                <td><%= patient.created_at.to_date %></td>
+              </tr>
+            <% end %>
           <% end %>
-        <% end %>
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+    <% else %>
+      <div class="spacer">You must be signed in to view this page.</div>
+    <% end %>
     <br>
     <%= link_to 'New Patient', new_patient_path %>
   </div>
