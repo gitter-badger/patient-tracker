@@ -49,7 +49,9 @@ class="ui-page ui-page-theme-a ui-page-active">
       <div class="spacer">You must be signed in to view this page.</div>
     <% end %>
     <br>
-    <%= link_to 'New Patient', new_patient_path %>
+    <% if policy(@patients).create? %>
+      <%= link_to 'Add Encounters', new_patient_path %>
+    <% end %>
   </div>
 
   <div class="form-block">
