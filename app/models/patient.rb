@@ -6,4 +6,19 @@ class Patient < ActiveRecord::Base
 
   belongs_to :user
 
+  validates :encounter_type, presence: true
+  validates :encountered_on, presence: true
+
+  after_commit :transaction_success
+  after_rollback :transaction_failure
+
+  private
+    #TODO: improve transaction error logging!
+    def transaction_success
+      STDOUT.puts "Transaction success for Patient #{self.inspect}"
+    end
+
+    def transaction_failure
+      STDOUT.puts "Transaction failure for Patient #{self.inspect}"
+    end
 end

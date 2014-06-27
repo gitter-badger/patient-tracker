@@ -24,25 +24,27 @@ class PatientsController < ApplicationController
   # POST /patients
   # POST /patients.json
   def create
-    # @patient = Patient.new()
 
-    ActiveRecord::Base.transaction do
-      encounter_types.each do |type, number|
-        number.to_i.times {Patient.create!(encounter_type: type.to_s.humanize(capitalize: false), encountered_on: encountered_on, user: current_user)}
+    total = 0
+    begin
+      ActiveRecord::Base.transaction do
+        encounter_types.each do |type, number|
+          total += number.to_i
+          number.to_i.times {Patient.create!(encounter_type: type.to_s.humanize(capitalize: false), encountered_on: encountered_on, user: current_user)}
+        end
+      end
+    rescue ActiveRecord::ActiveRecordError => error
+      STDERR.puts "Error in PatientsController#create: #{error.message}"
+      redirect_to :new_patient, alert: "Something went wrong!
+                      Your encounters were not counted!
+                      Please count again!"
+    else
+      if total == 0
+        redirect_to :new_patient, alert: 'You did not count your encounters!'
+      else
+        redirect_to :patients, notice: 'Your encounters have been counted!'
       end
     end
-
-    redirect_to patients_url
-
-    # respond_to do |format|
-    #   if @patient.save
-    #     format.html { redirect_to @patient, notice: 'Patient was successfully created.' }
-    #     format.json { render :show, status: :created, location: @patient }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @patient.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
   # PATCH/PUT /patients/1
