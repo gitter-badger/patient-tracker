@@ -543,11 +543,19 @@ text-shadow: none;
 
 #totalPatientsLabel {
   margin-bottom: 0;
-  margin-top: 1.75em;
+  margin-top: 0em;
+  margin-left: 0.75em;
   margin-right: 0.75em;
   font-family: GibsonLight;
 }
 
+.totalnumber{
+  text-align: center;
+  padding-left: 0.5em;
+  /*margin-left: 0.5em; ;*/
+  font-family: 'GibsonSemiBold', Verdana, sans-serif;
+  font-size:40px;
+}
 
 
 .blockFloatNot {
@@ -649,16 +657,6 @@ text-shadow: none;
 
   margin-top: 50px;
 
-}
-.totallabel{
-margin-top: 40px;
-
-}
-
-.totalnumber{
-  font-family: 'GibsonSemiBold', Verdana, sans-serif;
-  font-size:46px;
-  margin: 0px;
 }
 
 .lineinput input{
