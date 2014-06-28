@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Patient Tracker</title>
+    <title>Encounter Counter</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -11,12 +11,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="description" content="The patient tracker allows resident physicians to
-    record a daily log of each type of patient encounter.">
+    <meta name="description" content="The Encounter Counter allows resident physicians to quickly
+    and efficiently record a daily count of each type of patient encounter.">
 
-    <%= stylesheet_link_tag 'gibson', media: 'all', 'data-turbolinks-track' => true %>
-    <%= stylesheet_link_tag 'hours_selector', media: 'all', 'data-turbolinks-track' => true %>
-    <%= stylesheet_link_tag 'jquery_mobile', media: 'all', 'data-turbolinks-track' => true %>
     <script>
       $(document).bind("mobileinit", function () {
         $.mobile.changePage.defaults.changeHash = false;
