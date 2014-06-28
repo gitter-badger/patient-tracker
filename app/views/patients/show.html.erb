@@ -1,19 +1,28 @@
-<p id="notice"><%= notice %></p>
+<div data-role="page" id="show">
+  <p id="notice"><%= notice %></p>
 
-<% if policy(@patient).show? %>
-<p>
-  <strong>Encounter Type:</strong>
-  <%= @patient.encounter_type %>
-  <strong>Encountered On:</strong>
-  <%= @patient.encountered_on %>
-  <strong>Doctor:</strong>
-  <%= @patient.user.present? ? @patient.user.name : "Unknown" %>
-</p>
-<% else %>
-  <p>You are not authorized to view this encounter.</p>
-<% end %>
+  <% if policy(@patient).show? %>
+  <p>
+    <strong>Encounter Type:</strong>
+    <%= @patient.encounter_type %>
+    <strong>Encountered On:</strong>
+    <%= @patient.encountered_on %>
+    <strong>Doctor:</strong>
+    <%= @patient.user.present? ? @patient.user.name : "Unknown" %>
+  </p>
+  <% else %>
+    <p>You are not authorized to view this encounter.</p>
+  <% end %>
 
-<% if policy(@patient).edit? %>
-  <%= link_to 'Edit', edit_patient_path(@patient) %> |
-<% end %>
-<%= link_to 'Back', patients_path %>
+  <% if policy(@patient).edit? %>
+    <%= link_to 'Edit', edit_patient_path(@patient) %> |
+  <% end %>
+  <%= link_to 'Back', patients_path %>
+  <div class="spacer2">
+  </div>
+  <div class="spacer2">
+  </div>
+  <div data-role="footer">
+    <h4>Encounter Counter &copy; 2014</h4>
+  </div>
+</div>
