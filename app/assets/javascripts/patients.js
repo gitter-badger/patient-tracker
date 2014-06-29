@@ -16,6 +16,8 @@ function resetEncounters(){
   for (i = 0; i < encounter_types.length; i++) {
     var encounter_type = encounter_types[i];
     $("#" + encounter_type).html(0);
+    $("#" + encounter_type).removeClass( "gradient_blue" );
+    $("#" + encounter_type).addClass( "gradient_light" );
     $('#encounter_types_' + encounter_type).val(0);
     $("#total").html(0);
   }
