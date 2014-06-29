@@ -1,3 +1,7 @@
 <div data-role="footer" class="fixed_fullwidth_footer" style="position: fixed;">
   <h4>Encounter Counter &copy; 2014</h4>
+  <h4>
+    <%= mail_to 'the.encounter.counter@gmail.com', 'Feedback', subject: 'Feedback',
+  body: "Please share any feedback for this app!  You might want to report unexpected behavior, errors, display problems, navigation problems, confusing information, desired features, or any other topic. Be as brief or elaborate as you wish.\n\nDuplicate feedback is welcome; it helps with prioritization." %>
+  </h4>
 </div>
