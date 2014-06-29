@@ -987,7 +987,7 @@ border: none;
 cursor: pointer;
 margin-left: 5px;
 margin-right: 15px;
-background: url(/_themes/10000ft/img/socialstrip.png);
+background: url(/path/to/image.png);
 background-position:0px 0px;
 background-color: #2d599a;
 
@@ -1001,7 +1001,7 @@ border: none;
 cursor: pointer;
 margin-left: 5px;
 margin-right: 15px;
-background: url(/_themes/10000ft/img/socialstrip.png);
+background: url(/path/to/image.png);
 background-position: -34px 0px;
 background-color: #30afd2;
 }
@@ -1014,7 +1014,7 @@ border: none;
 cursor: pointer;
 margin-left: 5px;
 margin-right: 15px;
-background: url(/_themes/10000ft/img/socialstrip.png);
+background: url(/path/to/image.png);
 background-position: -68px 0px;
 background-color: #005989;
 }
@@ -1027,7 +1027,7 @@ border: none;
 cursor: pointer;
 margin-left: 5px;
 margin-right: 15px;
-background: url(/_themes/10000ft/img/socialstrip.png);
+background: url(/path/to/image.png);
 background-position: 34px 0px;
 background-color: #666666;
 }
@@ -1209,14 +1209,14 @@ background-color: #58585a;
 
 }
 .tickettop{
-   background: url(/_themes/10000ft/img/topstrip.png);
+   background: url(/path/to/image.png);
    height: 10px;
 
 
 
 }
 .ticketbottom{
-   background: url(/_themes/10000ft/img/bottomstrip.png);
+   background: url(/path/to/image.png);
    height: 10px;
 
 
@@ -1431,7 +1431,7 @@ margin-top: 8px;
 
 }
 .prev_place_wc{
-  background: url(/_themes/10000ft/img/greenup.png)  no-repeat;
+  background: url(/path/to/image.png)  no-repeat;
   background-position: left center;
   /*height: 10px;*/
   padding-left: 15px;
@@ -1714,14 +1714,14 @@ margin-left:-2px;
 width: 287px;
 }
 .tickettop{
-   background: url(/_themes/10000ft/img/tickettopdark.png);
+   background: url(/path/to/image.png);
    height: 18px;
 
 
 
 }
 .ticketbottom{
-   background: url(/_themes/10000ft/img/ticketbottomdark.png);
+   background: url(/path/to/image.png);
    height: 18px;
 
 
