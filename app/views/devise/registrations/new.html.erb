@@ -1,4 +1,5 @@
-<div data-role="page" data-dialog="true" data-no-transition-cache>
+<div data-role="page" data-dialog="true" data-close-btn-text="X" data-no-transition-cache>
+  <!-- data-close-btn-text="X" Will this attribute show an X in IE8 -->
   <div data-role="header">
     <h2>Sign up</h2>
   </div><!-- /header -->
@@ -33,18 +34,12 @@
     </div>
 
     <div>
-      <%= f.submit "Sign up" %>
+      <%= f.button "Sign up" %><!-- May need to revert for older browsers! -->
+      <%# f.submit "Sign up" %>
     </div>
   <% end %>
 
-  <br />
-  <%= render "devise/shared/links" %>
+  <div style="text-align:center; padding: .5em;">OR</div>
 
-  <script>
-    $(document).ready( function() {
-      $('div[role="dialog"] a').addClass('ui-btn ui-corner-all');
-      $('div[role="dialog"] br').remove();
-    });
-  </script>
-
+  <%= render "devise/shared/buttons" %>
 </div>
