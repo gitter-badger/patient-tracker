@@ -1,5 +1,7 @@
-<div data-role="page">
-  <h2>Sign up</h2>
+<div data-role="page" data-dialog="true" data-no-transition-cache>
+  <div data-role="header">
+    <h2>Sign up</h2>
+  </div><!-- /header -->
   <br />
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
