@@ -7,7 +7,7 @@ class PatientPolicy < ApplicationPolicy
   end
 
   def index?
-    user.name == patient.user.name || user.role == 'Admin'
+    user.id == patient.user.id || user.role == 'Admin'
   end
 
   def show?
@@ -27,7 +27,7 @@ class PatientPolicy < ApplicationPolicy
   end
 
   def update?
-    user.role == 'Resident' && user.name == patient.user.name
+    user.role == 'Resident' && user.id == patient.user.id
   end
 
   def destroy?
