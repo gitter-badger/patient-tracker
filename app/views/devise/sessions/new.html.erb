@@ -1,4 +1,4 @@
-<div data-role="page" data-dialog="true">
+<div data-role="page" data-dialog="true" data-no-transition-cache>
   <div data-role="header">
     <h2>Sign in</h2>
   </div><!-- /header -->
@@ -30,7 +30,7 @@
   <script>
     $(document).ready( function() {
       $('div[role="dialog"] a[data-rel!="back"]').addClass('ui-btn ui-corner-all');
-      $('div[role="dialog"] br').remove()
+      $('div[role="dialog"] br').remove();
     });
   </script>
 
