@@ -30,11 +30,11 @@ function incrementEncounterType(section){
   current_value++;
   console.log(current_value);
 
-  $("#"+section).html(current_value);
+  $("#" + section).html(current_value);
   $('#encounter_types_' + section).val(current_value);
 
-  $("#"+section).addClass( "gradient_blue" );
-  $("#"+section).removeClass( "gradient_light" );
+  $("#" + section).addClass( "gradient_blue" );
+  $("#" + section).removeClass( "gradient_light" );
   calcTotal();
 }
 
