@@ -5,6 +5,14 @@ body{
   margin: 0px;
 
 }
+
+.fixed_fullwidth_footer {
+  /*TODO: Determine proper way to override .ui-footer */
+  /*position: fixed; */
+  bottom: 0px;
+  width: 100%;
+}
+
 #navBox_wc {
 
   width: 100%;
