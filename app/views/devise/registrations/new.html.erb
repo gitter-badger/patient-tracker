@@ -39,4 +39,12 @@
 
   <br />
   <%= render "devise/shared/links" %>
+
+  <script>
+    $(document).ready( function() {
+      $('div[role="dialog"] a').addClass('ui-btn ui-corner-all');
+      $('div[role="dialog"] br').remove();
+    });
+  </script>
+
 </div>

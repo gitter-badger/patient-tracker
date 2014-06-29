@@ -25,11 +25,10 @@
   <div style="text-align:center">OR</div>
 
   <%= render "devise/shared/links" %>
-  <%= link_to '', root_path, data: {rel: 'back'} %>
 
   <script>
     $(document).ready( function() {
-      $('div[role="dialog"] a[data-rel!="back"]').addClass('ui-btn ui-corner-all');
+      $('div[role="dialog"] a').addClass('ui-btn ui-corner-all');
       $('div[role="dialog"] br').remove();
     });
   </script>
