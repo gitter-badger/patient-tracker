@@ -23,18 +23,18 @@ function resetEncounters(){
   }
 }
 
-function incrementEncounterType(section){
-  console.log(section);
-  current_value = parseInt( $('#' + section).text() );
+function incrementEncounterType(encounter_type){
+  console.log(encounter_type);
+  current_value = parseInt( $('#' + encounter_type).text() );
   console.log(current_value);
   current_value++;
   console.log(current_value);
 
-  $("#" + section).html(current_value);
-  $('#encounter_types_' + section).val(current_value);
+  $("#" + encounter_type).html(current_value);
+  $('#encounter_types_' + encounter_type).val(current_value);
 
-  $("#" + section).addClass( "gradient_blue" );
-  $("#" + section).removeClass( "gradient_light" );
+  $("#" + encounter_type).addClass( "gradient_blue" );
+  $("#" + encounter_type).removeClass( "gradient_light" );
   calcTotal();
 }
 
