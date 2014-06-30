@@ -24,6 +24,12 @@
 
   <div class="wrap_section_narrow">
     <% if current_user %>
+      <% if policy(@patients).create? %>
+        <%= link_to 'Add Encounters', new_patient_path %> |
+      <% end %>
+      <%= link_to 'Sign Out', destroy_user_session_path(user_session), method: "delete" %>
+    <% end %>
+    <% if current_user %>
       <table data-role="table" id="patient_encounters_table" class="ui-responsive">
         <thead>
           <tr class="fullwidth">
@@ -49,13 +55,6 @@
       </table>
     <% else %>
       <div class="spacer">You must <%= link_to 'sign in', new_user_session_path %> to view this page.</div>
-    <% end %>
-    <br>
-    <% if current_user %>
-      <% if policy(@patients).create? %>
-        <%= link_to 'Add Encounters', new_patient_path %> |
-      <% end %>
-      <%= link_to 'Sign Out', destroy_user_session_path(user_session), method: "delete" %>
     <% end %>
   </div>
 
