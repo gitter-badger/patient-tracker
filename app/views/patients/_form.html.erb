@@ -13,7 +13,7 @@
 
   <div class="field">
     <input type="hidden" name="hidden[raven]" value="true">
-    <%= hidden_field_tag(:encountered_on, Date.today) %>
+    <%= hidden_field_tag(:encountered_on, Time.zone.today) %>
 
     <% encounter_types = ['adult_inpatient_and_ed', 'adult_icu', 'pediatric_inpatient',
     'pediatric_newborn', 'pediatric_ed', 'continuity_inpatient', 'continuity_external'] %>

@@ -28,7 +28,7 @@
   <% else %>
     <div class="wrap_section_narrow">
       <div class="spacer">
-        <%= date_field_tag(:date, Date.today, onchange: "setEncounteredOn()") %>
+        <%= date_field_tag(:date, Time.zone.today, onchange: "setEncounteredOn()") %>
       </div>
     </div>
 

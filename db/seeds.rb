@@ -26,7 +26,7 @@ puts "Created #{User.count} users!"
 Patient.destroy_all
 
 ENCOUNTER_TYPES.each do |type|
-  Patient.create!(encounter_type: type, encountered_on: Date.today, user: developer)
+  Patient.create!(encounter_type: type, encountered_on: Time.zone.today, user: developer)
   Patient.create!(encounter_type: type, encountered_on: 7.days.ago, user: developer)
 end
 
