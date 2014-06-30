@@ -1,0 +1,13 @@
+<% if current_user %>
+  <% if controller_name == 'patients' && action_name == 'index' && policy(@patients).create? %>
+    <%= link_to 'Add Encounters', new_patient_path %> |
+  <% else %>
+    <%= link_to 'All Encounters', patients_path %> |
+  <% end %>
+  <%= link_to 'Sign Out', destroy_user_session_path(user_session), method: "delete" %>
+<% end %> |
+<%= mail_to 'the.encounter.counter@gmail.com', 'Feedback', subject: 'Feedback',
+body: "Please share any feedback for this app!  You might want to report unexpected behavior,
+errors, display problems, navigation problems, confusing information, desired features, or any
+other topic. Be as brief or elaborate as you wish.\n\nDuplicate feedback is welcome; it helps
+with prioritization." %>
