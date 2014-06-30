@@ -15,12 +15,11 @@
   </div>
 
   <div class="wrap_section_narrow">
-    <div class="spacer">
-      <% flash.each do |name, msg| -%>
-        <%= content_tag :p, msg, id: name, class: name %>
-      <% end -%>
-    </div>
+    <% flash.each do |name, msg| -%>
+      <%= content_tag :p, msg, id: name, class: name %>
+    <% end -%>
   </div>
+
   <div class="wrap_section_narrow_wc" style="background-color: none">
     <div class="spacer">
       <%= render 'layouts/nav' %>
