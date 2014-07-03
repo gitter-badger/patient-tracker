@@ -1,4 +1,8 @@
 <div data-role="page">
+  <% content_for :header_title, 'Your Account' %>
+  <%= render 'layouts/header' %>
+  <%= render 'layouts/flash_messages' %>
+
   <h1><%= @user.name %></h1>
 
   <% if current_user == @user %>

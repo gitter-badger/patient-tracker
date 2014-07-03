@@ -1,6 +1,9 @@
 <!-- Begin Page 1 -->
 <div data-role="page" id="show">
-  <p id="notice"><%= notice %></p>
+
+  <% content_for :header_title, 'Single Encounter Details' %>
+  <%= render 'layouts/header' %>
+  <%= render 'layouts/flash_messages' %>
 
   <% if policy(@patient).show? %>
   <p>

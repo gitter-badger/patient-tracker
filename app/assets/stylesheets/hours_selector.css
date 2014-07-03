@@ -417,15 +417,15 @@ font-family: 'GibsonLight', Verdana, sans-serif;
 
 color: #221f1f;
 }
-.question{
+.header_title_wctle{
 
   margin-top: 10px;
 }
-.question_wc{
+.header_title_wc{
   text-align: center;
   margin-top: 30px;
 }
-.questionitem_wc{
+.header_title_item_wc{
   /*text-align: center;*/
   margin-top: 10px;
   font-family: 'GibsonRegular', Verdana, sans-serif;

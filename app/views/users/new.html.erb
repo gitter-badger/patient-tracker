@@ -1,5 +1,7 @@
 <div data-role="page">
-  <h1>New user</h1>
+  <% content_for :header_title, 'New User' %>
+  <%= render 'layouts/header' %>
+  <%= render 'layouts/flash_messages' %>
 
   <%= render 'form' %>
 

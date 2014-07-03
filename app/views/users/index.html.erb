@@ -1,5 +1,7 @@
 <div data-role="page">
-  <h1>All users who have registered:</h1>
+  <% content_for :header_title, 'Registered Users' %>
+  <%= render 'layouts/header' %>
+  <%= render 'layouts/flash_messages' %>
 
   <table class="ui-table">
     <thead>
