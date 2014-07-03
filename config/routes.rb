@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  get 'patients/summary' => 'patients#summary', as: :summary
   resources :users
   resources :patients
   root 'patients#new'

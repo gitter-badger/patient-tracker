@@ -7,6 +7,10 @@ class PatientsController < ApplicationController
     @patients = Patient.all.includes(:user).order(encountered_on: :desc).order('users.name ASC')
   end
 
+  def summary
+    @patients_count = Patient.group(:user_id, :encounter_type).count
+  end
+
   # GET /patients/1
   # GET /patients/1.json
   def show

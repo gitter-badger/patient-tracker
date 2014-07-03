@@ -1,0 +1,66 @@
+<div data-role="page" id="index" data-url="index" tabindex="0">
+  <div class="fullwidth">
+    <div class="wrap_section_narrow_top">
+      <div class="row">
+        <div class="span_s">
+          <div class="thumb_small">
+            <%= image_tag 'swedish.jpg' %>
+          </div>
+        </div>
+        <div id="topictitle" class="question">
+          Summary of Patient Encounters
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap_section_narrow">
+    <% flash.each do |name, msg| -%>
+      <%= content_tag :p, msg, id: name, class: name %>
+    <% end -%>
+  </div>
+
+  <div class="wrap_section_narrow_wc" style="background-color: none">
+    <div class="spacer">
+      <%= render 'layouts/nav' %>
+    </div>
+  </div>
+
+  <div class="wrap_section_narrow">
+    <% if current_user %>
+      <table data-role="table" id="patient_encounters_table" class="ui-responsive">
+        <thead>
+          <tr class="fullwidth">
+            <th>Resident</th>
+            <th>Type</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @patients_count.each do |group, count| %>
+            <% user = User.find(group[0]) %>
+            <% if user == current_user || policy(current_user).admin? %>
+              <tr class="lineitem fullwidth">
+                <td><%= user.name %></td>
+                <td><%= group[1] %></td>
+                <td><%= count %></td>
+              </tr>
+            <% end %>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <div class="spacer">You must <%= link_to 'sign in', new_user_session_path %> to view this page.</div>
+    <% end %>
+  </div>
+
+  <div class="form-block">
+  </div>
+  <div class="spacer2">
+  </div>
+  <%= render 'layouts/footer' %>
+</div>
+
+
+
