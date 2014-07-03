@@ -1,0 +1,5 @@
+<div class="wrap_section_narrow">
+  <% flash.each do |name, msg| -%>
+    <%= content_tag :p, msg, id: name, class: name %>
+  <% end -%>
+</div>

@@ -15,11 +15,7 @@
     </div>
   </div>
 
-  <div class="wrap_section_narrow">
-    <% flash.each do |name, msg| -%>
-      <%= content_tag :p, msg, id: name, class: name %>
-    <% end -%>
-  </div>
+  <%= render 'layouts/flash_messages' %>
 
   <div class="wrap_section_narrow_wc" style="background-color: none">
     <div class="spacer">
