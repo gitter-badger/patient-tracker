@@ -14,6 +14,6 @@ class User < ActiveRecord::Base
     end
 
     def set_default_role
-      self.role = 'Resident'
+      self.role ||= 'Resident'
     end
 end
