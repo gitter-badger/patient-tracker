@@ -8,7 +8,9 @@ class PatientsController < ApplicationController
   end
 
   def summary
-    @patients_count = Patient.group(:user_id, :encounter_type).count
+    #TODO: Map encounter_type values to an integer so that reults can be ordered
+    #identical to patients/new view
+    @patients_count = Patient.group(:user_id, :encounter_type).order(:user_id, :encounter_type).count
   end
 
   # GET /patients/1
