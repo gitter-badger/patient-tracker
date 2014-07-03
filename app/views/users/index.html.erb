@@ -14,30 +14,30 @@
       </div>
     </div>
   <% else %>
-  <div class="ui-content">
-    <table class="ui-table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Role</th>
-          <th>E-Mail Confirmed?</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @users.each do |user| %>
+    <div class="ui-content">
+      <table class="ui-table">
+        <thead>
           <tr>
-            <td><%= user.name %></td>
-            <td><%= user.role %></td>
-            <td><%= user.confirmed? ? user.confirmed_at.to_date : 'NO' %></td>
-            <td><%= link_to 'Show', user %></td>
-            <td><%= link_to 'Edit', edit_user_path(user) %></td>
+            <th>Name</th>
+            <th>Role</th>
+            <th>E-Mail Confirmed?</th>
+            <th colspan="3"></th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+        </thead>
+
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td><%= user.name %></td>
+              <td><%= user.role %></td>
+              <td><%= user.confirmed? ? user.confirmed_at.to_date : 'NO' %></td>
+              <td><%= link_to 'Show', user %></td>
+              <td><%= link_to 'Edit', edit_user_path(user) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   <%= link_to 'New User', new_user_path %>
   <% end %>
 
