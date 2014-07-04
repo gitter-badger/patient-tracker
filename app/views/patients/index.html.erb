@@ -5,14 +5,24 @@
   <%= render 'layouts/header' %>
   <%= render 'layouts/flash_messages' %>
 
-  <div class="wrap_section_narrow_wc" style="background-color: none">
-    <div class="spacer">
-      <%= render 'layouts/nav' %>
-    </div>
-  </div>
+    <% if !current_user %>
+      <div class="wrap_section_narrow_top">
+        <div class="row">
+          <p>
+            You must
+            <%= link_to 'sign in', new_user_session_path, data: {transition: 'flip'} %>
+            to view this page.
+          </p>
+        </div>
+      </div>
+    <% else %>
+      <div class="wrap_section_narrow_wc" style="background-color: none">
+        <div class="spacer">
+          <%= render 'layouts/nav' %>
+        </div>
+      </div>
 
-  <div class="wrap_section_narrow">
-    <% if current_user %>
+      <div class="wrap_section_narrow">
       <table data-role="table" id="patient_encounters_table" class="ui-responsive">
         <thead>
           <tr class="fullwidth">
@@ -36,10 +46,8 @@
           <% end %>
         </tbody>
       </table>
-    <% else %>
-      <div class="spacer">You must <%= link_to 'sign in', new_user_session_path %> to view this page.</div>
+      </div>
     <% end %>
-  </div>
 
   <div class="form-block">
   </div>
