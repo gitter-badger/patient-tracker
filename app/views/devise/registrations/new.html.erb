@@ -5,6 +5,9 @@
   </div><!-- /header -->
   <br />
 
+  <% flash[:alert] = 'Use an e-mail address outside of Swedish.org to ensure e-mail delivery.' %>
+  <%= render 'layouts/flash_messages' %>
+
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
 
