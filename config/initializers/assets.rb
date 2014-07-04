@@ -1,6 +1,5 @@
 Rails.application.config.assets.precompile += %w(
   gibson.css
-  hours_selector.css
   jquery_mobile.css
   gibsonlight-webfont.eot
   gibsonlight-webfont.ttf
