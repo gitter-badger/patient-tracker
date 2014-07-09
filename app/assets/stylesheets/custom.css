@@ -11,7 +11,11 @@ div.ui-header.ui-bar-inherit a.ui-icon-delete {
   margin: 0px;
 }
 
-div form div, div.ui-dialog-contain a.ui-btn {
+form.new_user { /* New Registration AND New session */
+  margin-top: 1.1em;
+}
+
+form.new_user, div.ui-dialog-contain a.ui-btn {
   /*width: 50px !important*/
   margin-left: 1.1em;
   margin-right: 1.1em;
@@ -21,18 +25,6 @@ div.ui-dialog-contain {
   padding-bottom: 1.1em;
 }
 /* Custom Dialog Alignment */
-
-/* Override Custom Dialog Alignment for Submit and Reset Buttons */
-div.row#buttonsLine {
-  margin-left: 0px;
-  margin-right: 0px;
-}
-
-div.actions.saveline {
-  margin-left: 0px;
-  margin-right: 0px;
-}
-/* Override Custom Dialog Alignment for Submit and Reset Buttons */
 
 .fixed_fullwidth_footer {
   /*TODO: Determine proper way to override .ui-footer */
