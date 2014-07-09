@@ -9,14 +9,15 @@
   <% end  %>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: {ajax: false}) do |f| %>
-    <div><%= f.label :email %><br />
+    <div><%= f.label :email %>
     <%= f.email_field :email, autofocus: true %></div>
+    <br />
 
-    <div><%= f.label :password %><br />
+    <div><%= f.label :password %>
       <%= f.password_field :password, autocomplete: "off" %></div>
 
     <% if devise_mapping.rememberable? -%>
-      <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+      <div><%= f.check_box :remember_me, data: {mini: true} %> <%= f.label :remember_me %></div><br />
     <% end -%>
 
     <!-- <div><%# f.submit "Sign in" %></div> May need to revert for older browsers!-->
