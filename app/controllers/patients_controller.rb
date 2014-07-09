@@ -8,9 +8,16 @@ class PatientsController < ApplicationController
   end
 
   def summary
+    @patients = Patient.all.includes(:user).order(encountered_on: :desc).order('users.name ASC')
+
     #TODO: Map encounter_type values to an integer so that reults can be ordered
     #identical to patients/new view
     @patients_count = Patient.group(:user_id, :encounter_type).order(:user_id, :encounter_type).count
+
+    respond_to do |format|
+      format.html
+      format.xls
+    end
   end
 
   # GET /patients/1
