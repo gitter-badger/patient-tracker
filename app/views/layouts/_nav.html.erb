@@ -4,8 +4,12 @@
   <% else %>
     <%= link_to 'All Encounters', patients_path %> |
   <% end %>
-  <%= link_to 'Summary', summary_path %> <br />
+  <% if controller_name == 'patients' && action_name == 'summary' %>
+    <%= link_to 'Download as Excel', summary_path(format: 'xls'), data: {ajax: false} %> <br />
+  <% else %>
+    <%= link_to 'Summary', summary_path %> <br />
+  <% end %>
   <%= link_to 'Sign Out', destroy_user_session_path(user_session), method: "delete" %> |
-<%= mail_to 'the.encounter.counter@gmail.com', 'Feedback', subject: 'Feedback',
-body: "Please share any feedback for this app!  You might want to report unexpected behavior, errors, display problems, navigation problems, confusing information, desired features, or any other topic. Be as brief or elaborate as you wish.\n\nDuplicate feedback is welcome; it helps with prioritization." %>
+  <%= mail_to 'the.encounter.counter@gmail.com', 'Feedback', subject: 'Feedback',
+  body: "Please share any feedback for this app!  You might want to report unexpected behavior, errors, display problems, navigation problems, confusing information, desired features, or any other topic. Be as brief or elaborate as you wish.\n\nDuplicate feedback is welcome; it helps with prioritization." %>
 <% end %>
