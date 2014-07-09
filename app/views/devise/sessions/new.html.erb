@@ -9,19 +9,28 @@
   <% end  %>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: {ajax: false}) do |f| %>
-    <div><%= f.label :email %>
-    <%= f.email_field :email, autofocus: true %></div>
+    <div>
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true %>
+    </div>
     <br />
 
-    <div><%= f.label :password %>
-      <%= f.password_field :password, autocomplete: "off" %></div>
+    <div>
+      <%= f.label :password %>
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
 
     <% if devise_mapping.rememberable? -%>
-      <div><%= f.check_box :remember_me, data: {mini: true} %> <%= f.label :remember_me %></div><br />
+      <div>
+        <%= f.check_box :remember_me, data: {mini: true} %>
+        <%= f.label :remember_me %>
+      </div>
+      <br />
     <% end -%>
 
-    <!-- <div><%# f.submit "Sign in" %></div> May need to revert for older browsers!-->
-    <div><%= f.button "Sign in" %></div>
+    <div>
+      <%= f.button "Sign in" %>
+    </div>
   <% end %>
 
   <div style="text-align:center; padding: .5em;">OR</div>
