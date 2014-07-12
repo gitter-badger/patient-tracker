@@ -5,6 +5,9 @@ class UserPolicy < ApplicationPolicy
     user.role == 'Admin'
   end
 
+  def index?
+    admin?
+  end
 
   class Scope < Struct.new(:user, :scope)
     def resolve
