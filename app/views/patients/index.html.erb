@@ -38,7 +38,7 @@
             <% if policy(patient).index? %>
               <tr class="lineitem fullwidth">
                 <td><%= patient.user.present? ? patient.user.name : "Unknown" %></th>
-                <td><%= patient.encounter_type %></td>
+                <td><%= link_to patient.encounter_type, patient %></td>
                 <td><%= patient.encountered_on %></td>
                 <td><%= patient.created_at.to_date %></td>
               </tr>

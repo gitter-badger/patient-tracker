@@ -1,27 +1,66 @@
 <!-- Begin Page 1 -->
 <div data-role="page" id="show">
 
-  <% content_for :header_title, 'Single Encounter Details' %>
+  <% content_for :header_title, 'Encounter <br /> Details'.html_safe %>
   <%= render 'layouts/header' %>
   <%= render 'layouts/flash_messages' %>
 
-  <% if policy(@patient).show? %>
-  <p>
-    <strong>Encounter Type:</strong>
-    <%= @patient.encounter_type %>
-    <strong>Encountered On:</strong>
-    <%= @patient.encountered_on %>
-    <strong>Doctor:</strong>
-    <%= @patient.user.present? ? @patient.user.name : "Unknown" %>
-  </p>
+  <% if !current_user %>
+    <div class="row">
+      <p>
+        You must
+        <%= link_to 'sign in', new_user_session_path, data: {transition: 'flip'} %>
+        to view this page.
+      </p>
+    </div>
+  <% elsif !policy(@patient).show? %>
+    <div class="wrap_section_narrow_top">
+      <div class="row">
+        <p>
+          <p>You are not authorized to view this encounter.</p>
+        </p>
+      </div>
+    </div>
   <% else %>
-    <p>You are not authorized to view this encounter.</p>
+    <div class="wrap_section_narrow_wc" style="background-color: none">
+      <div class="spacer">
+        <%= render 'layouts/nav' %>
+      </div>
+    </div>
+
+    <div class="wrap_section_narrow">
+      <table data-role="table" id="patient_encounters_table" class="ui-responsive">
+        <thead>
+          <tr class="fullwidth">
+            <th>Resident</th>
+            <th>Type</th>
+            <th>Encountered</th>
+            <th>Submitted</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% if policy(@patient).index? %>
+            <tr class="lineitem fullwidth">
+              <td><%= @patient.user.present? ? @patient.user.name : "Unknown" %></th>
+              <td><%= @patient.encounter_type %></td>
+              <td><%= @patient.encountered_on %></td>
+              <td><%= @patient.created_at.to_date %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   <% end %>
 
-  <% if policy(@patient).edit? %>
-    <%= link_to 'Edit', edit_patient_path(@patient) %> |
-  <% end %>
-  <%= link_to 'Back', patients_path %>
+  <div class="wrap_section_narrow">
+    <div class="spacer">
+      <% if policy(@patient).destroy? %>
+        <%= link_to 'Delete Encounter', patient_path(@patient), method: :delete %> |
+      <% end %>
+      <%= link_to 'Back', patients_path %>
+    </div>
+  </div>
 
   <%= render 'layouts/footer' %>
 </div>
