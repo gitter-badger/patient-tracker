@@ -31,7 +31,7 @@ class PatientPolicy < ApplicationPolicy
   end
 
   def destroy?
-    create?
+    user.id == patient.user.id
   end
 
   class Scope < Struct.new(:user, :scope)
