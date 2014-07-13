@@ -23,6 +23,10 @@
         $.mobile.hashListeningEnabled = true;
         $.mobile.pushStateEnabled = false;
       });
+
+      if (!window.console) {
+        console = {log: function() {}};
+      }
     </script>
   </head>
   <body>
