@@ -42,24 +42,28 @@ div {
 }
 
 #error_explanation {
-  width: 450px;
   border: 2px solid red;
+  border-radius: 0.3125em;
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
   background-color: #f0f0f0;
+  -webkit-box-shadow: 0 0 .75em red;
+  -moz-box-shadow: 0 0 .75em red;
+  box-shadow: 0 0 .75em red;
   h2 {
     text-align: left;
     font-weight: bold;
     padding: 5px 5px 5px 15px;
-    font-size: 12px;
+    font-size: 1em;
     margin: -7px;
     margin-bottom: 0px;
-    background-color: #c00;
+    background-color: red;
+    background-color: rgba(255, 0, 0, 0.6);
     color: #fff;
   }
   ul li {
-    font-size: 12px;
-    list-style: square;
+    font-size: 1em;
+    list-style: circle;
   }
 }
