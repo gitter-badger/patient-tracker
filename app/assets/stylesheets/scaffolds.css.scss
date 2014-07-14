@@ -35,10 +35,10 @@ div {
   padding-bottom: 0em;
 }
 
-.field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
+.field_with_errors div input{
+  -webkit-box-shadow: 0 0 .75em red;
+  -moz-box-shadow: 0 0 .75em red;
+  box-shadow: 0 0 .75em red;
 }
 
 #error_explanation {
