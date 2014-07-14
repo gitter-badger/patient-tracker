@@ -703,12 +703,21 @@ text-shadow: none;
     padding-left: 7px;
 
 }
-.gradient_light {
 
-background: linear-gradient(rgb(168, 223, 243), rgb(113, 211, 237));
-border-radius: 5px;
-box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px;
+.gradient_light {
+  background: #84c9d9;
+  background: linear-gradient(rgb(132, 201, 217), rgb(139, 187, 217));
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px;
 }
+
+.gradient_blue {
+  background: rgb(0, 194, 247);
+  background: linear-gradient(rgb(0, 194, 247), rgb(0, 149, 208));
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px;
+}
+
 .homewin2 {
 cursor: pointer;
 width: 90px;
@@ -760,13 +769,6 @@ border-bottom-right-radius: 5px;
 .prevpredactive{
   background: linear-gradient(rgb(129, 220, 250), rgb(118, 200, 231));
 
-}
-.gradient_blue {
-
-
-background: linear-gradient(rgb(0, 194, 247), rgb(0, 149, 208));
-border-radius: 5px;
-box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px;
 }
 
 .featureText{
