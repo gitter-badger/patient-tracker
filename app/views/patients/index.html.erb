@@ -36,7 +36,7 @@
         <tbody>
           <% @patients.each do |patient| %>
             <% if policy(patient).index? %>
-              <tr class="lineitem fullwidth">
+              <tr class="lineitem_index fullwidth">
                 <td><%= patient.user.present? ? patient.user.name : "Unknown" %></th>
                 <td><%= link_to patient.encounter_type, patient %></td>
                 <td><%= patient.encountered_on %></td>

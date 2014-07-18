@@ -610,16 +610,25 @@ text-shadow: none;
   left:0px;
   top:0px;
 }
-.lineitem{
 
+.lineitem{
   width:100%;
   min-height: 58px;
   border-top: 1px solid #D8D6D6;
   font-family: 'GibsonLight', Verdana, sans-serif;
     line-height:32px;
     font-size:16px;
-
 }
+
+.lineitem_index{
+  width:100%;
+  min-height: 58px;
+  border-top: 1px solid #D8D6D6;
+  font-family: 'GibsonLight', Verdana, sans-serif;
+    line-height:30px;
+    font-size:15px;
+}
+
 .lineitem_end{
 
   width:100%;
