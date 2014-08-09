@@ -1576,8 +1576,7 @@ section {
   *zoom: 1;
 }
 
-.row:before,
-.row:after {
+.row:before,row:after {
   display: table;
   line-height: 0;
   content: "";
@@ -1627,8 +1626,7 @@ section {
 }
 
 @media (max-width: 580px) {
-  .wrap_section_narrow_top2,
-  .wrap_section_narrow2{
+  .wrap_section_narrow_top2, .wrap_section_narrow2{
     width: 282px;
     /*background-color: #ffb9b9;*/
   }
@@ -1650,11 +1648,7 @@ section {
     z-index:-1;
   }
 
-  .span8,
-  .span6,
-  .span4,
-  .span12,
-  .span7{
+  .span8, .span6, .span4, .span12, .span7{
     width: 282px;
   }
 
