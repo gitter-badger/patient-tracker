@@ -5,7 +5,6 @@ body {
   margin: 0px;
 }
 
-/* Custom Dialog Alignment */
 div.ui-header.ui-bar-inherit a.ui-icon-delete {
   margin: 0px;
 }
@@ -24,12 +23,11 @@ div.ui-dialog-contain {
   padding-bottom: 1.1em;
 }
 
-/* Custom Dialog Alignment */
-.fixed_fullwidth_footer {
-/*TODO: Determine proper way to override .ui-footer */
-  /*position: fixed; */
-  bottom: 0px;
+.fullwidth_footer {
+  margin-top: 2em;
+  text-align: center;
   width: 100%;
+  background-color: #ddd;
 }
 
 #navBox_wc {
@@ -287,10 +285,6 @@ div.ui-dialog-contain {
   padding-top: 50px;
   /*text-align: center;*/
   /*padding-bottom: 20px;*/
-}
-
-.spacer2{
-  height: 160px;
 }
 
 .fullwidth {
