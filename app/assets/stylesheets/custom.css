@@ -39,15 +39,15 @@ div.ui-dialog-contain {
   background-color: #232323;
   /*font-family: 'GibsonRegular', Verdana, sans-serif;*/
   /*position: fixed;
-  z-index:3;
+  z-index: 3;
   -moz-box-shadow: 0px 0px 15px #808080;
   -webkit-box-shadow: 0px 0px 15px #808080;
   box-shadow: 0px 0px 15px #808080;*/
 }
 
 .wrap_section_narrow {
-  max-width:620px;
-  margin:0 auto 0 auto;
+  max-width: 620px;
+  margin: 0 auto 0 auto;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -69,20 +69,20 @@ div.ui-dialog-contain {
 .marginblock_wc {
   width: 625px;
   position: relative;
-  margin:0 auto 0 auto;
+  margin: 0 auto 0 auto;
 }
 
 #centerNav_wc {
   width: 625px;
   min-height: 100px;
   position: relative;
-  margin:0 auto 0 auto;
+  margin: 0 auto 0 auto;
   /*background-color: #ffeeee;*/
 }
 
 .wrap_section_narrow_wc {
-  width:620px;
-  margin:0 auto 0 auto;
+  width: 620px;
+  margin: 0 auto 0 auto;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -115,8 +115,8 @@ div.ui-dialog-contain {
 }
 
 .wrap_section_narrow2{
-  width:550px;
-  margin:0 auto 0 auto;
+  width: 550px;
+  margin: 0 auto 0 auto;
   padding-left: 10px;
 }
 
@@ -388,12 +388,12 @@ div.ui-dialog-contain {
 
 .wrap_section_narrow_top2{
   min-height: 60px;
-  max-width:510px;
+  max-width: 510px;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
-  margin:0px auto 0 auto;
+  margin: 0px auto 0 auto;
   font-size: 38px;
   line-height: 43px;
   font-family: 'GibsonLight', Verdana, sans-serif;
@@ -405,11 +405,11 @@ div.ui-dialog-contain {
 
 .wrap_section_narrow_top_wc {
   height: 100px;
-  max-width:620px;
+  max-width: 620px;
   padding-left: 25px;
   padding-right: 25px;
   padding-top: 40px;
-  margin:0px auto 0 auto;
+  margin: 0px auto 0 auto;
   /*background-color: #f3f3f4;*/
   font-size: 36px;
   line-height: 30px;
@@ -419,11 +419,11 @@ div.ui-dialog-contain {
 
 .wrap_section_narrow_top {
   height: 132px;
-  max-width:620px;
+  max-width: 620px;
   padding-left: 25px;
   padding-right: 25px;
   padding-top: 20px;
-  margin:0px auto 0 auto;
+  margin: 0px auto 0 auto;
   background-color: #f3f3f4;
   font-size: 36px;
   line-height: 43px;
@@ -530,9 +530,9 @@ a {
 }
 
 .infopage {
-  max-width:620px;
+  max-width: 620px;
   background-color: #fff;
-  margin:20px auto 20px auto;
+  margin: 20px auto 20px auto;
   /*border: 1px solid #333;*/
   padding-bottom: 100px;
 }
@@ -570,7 +570,7 @@ a {
   padding-left: 0.5em;
   /*margin-left: 0.5em; ;*/
   font-family: 'GibsonSemiBold', Verdana, sans-serif;
-  font-size:40px;
+  font-size: 40px;
 }
 
 .blockFloatNot {
@@ -811,7 +811,7 @@ a {
 
 .tag_wc {
   font-family: 'GibsonLight', Verdana, sans-serif;
-  width:100%;
+  width: 100%;
   font-size: 18px;
   line-height: 30px;
   text-align: left;
@@ -832,7 +832,7 @@ a {
 
 .rules_wc {
   font-family: 'GibsonLight', Verdana, sans-serif;
-  width:100%;
+  width: 100%;
   font-size: 24px;
   line-height: 30px;
   text-align: left;
@@ -851,14 +851,14 @@ a {
 
 .done_wc {
   font-family: 'GibsonRegular', Verdana, sans-serif;
-  width:100%;
+  width: 100%;
   font-size: 24px;
   margin-top: -10px;
 }
 
 .link_wc {
   font-family: 'GibsonRegular', Verdana, sans-serif;
-  width:100%;
+  width: 100%;
   font-size: 24px;
   margin-top: 10px;
   color: #008143;
@@ -912,10 +912,10 @@ a {
 }
 
 .create_wc input {
-  width:320px;
+  width: 320px;
   font-family: 'GibsonLight', Verdana, sans-serif;
   margin-top: 10px;
-  font-size:16px;
+  font-size: 16px;
   height: 34px;
   padding-left: 7px;
 }
@@ -1018,7 +1018,7 @@ strong {
   margin-left: 5px;
   margin-right: 15px;
   background: url(/path/to/image.png);
-  background-position:0px 0px;
+  background-position: 0px 0px;
   background-color: #2d599a;
 }
 
@@ -1195,7 +1195,7 @@ strong {
   font-family: 'GibsonLight', Verdana, sans-serif;
   margin-top: 25px;
   margin-left: 4px;
-  font-size:20px;
+  font-size: 20px;
   color: #fff;
 }
 
@@ -1252,19 +1252,19 @@ strong {
 
 .footertitle {
   font-family: 'GibsonSemiBold', Verdana, sans-serif;
-  font-size:14px;
+  font-size: 14px;
   margin-bottom: 15px;
 }
 
 .tickettitle {
   font-family: 'GibsonSemiBold', Verdana, sans-serif;
-  font-size:14px;
+  font-size: 14px;
   margin-bottom: 20px;
 }
 
 .ticketcol1{
   font-family: 'GibsonRegular', Verdana, sans-serif;
-  font-size:12px;
+  font-size: 12px;
   color: #27AAE1;
   line-height: 14px;
 }
@@ -1275,12 +1275,12 @@ t {
 
 t2{
   font-family: 'GibsonSemiBold', Verdana, sans-serif;
-  font-size:30px;
+  font-size: 30px;
 }
 
 .ticketcol2{
   font-family: 'GibsonRegular', Verdana, sans-serif;
-  font-size:12px;
+  font-size: 12px;
   text-align: right;
   line-height: 14px;
   color: #27AAE1;
@@ -1313,28 +1313,28 @@ t2{
 
 .tickettotal {
   font-family: 'GibsonRegular', Verdana, sans-serif;
-  font-size:17px;
+  font-size: 17px;
   color: #27AAE1;
 }
 
 .bcol1{
   width: 94px;
   font-family: 'GibsonLight', Verdana, sans-serif;
-  font-size:16px;
+  font-size: 16px;
   line-height: 20px;
 }
 
 .bcol2{
   width: 94px;
   font-family: 'GibsonLight', Verdana, sans-serif;
-  font-size:16px;
+  font-size: 16px;
   line-height: 20px;
 }
 
 .bcol3{
   width: 80px;
   font-family: 'GibsonLight', Verdana, sans-serif;
-  font-size:16px;
+  font-size: 16px;
   line-height: 20px;
 }
 
@@ -1342,27 +1342,27 @@ t2{
   width: 61px;
   text-align: right;
   font-family: 'GibsonLight', Verdana, sans-serif;
-  font-size:16px;
+  font-size: 16px;
   line-height: 20px;
 }
 
 .sum {
   font-family: 'GibsonLight', Verdana, sans-serif;
-  font-size:40px;
+  font-size: 40px;
   width: 362px;
   text-align: right;
 }
 
 .totaltext {
   font-family: 'GibsonRegular', Verdana, sans-serif;
-  font-size:26px;
+  font-size: 26px;
   color: #27AAE1;
   margin-top: 20px;
 }
 
 .totalnumber2{
   font-family: 'GibsonSemiBold', Verdana, sans-serif;
-  font-size:40px;
+  font-size: 40px;
   color: #27AAE1;
   text-align: right;
   margin-top: 8px;
@@ -1370,7 +1370,7 @@ t2{
 
 .fineprinttop {
   font-family: 'GibsonLight', Verdana, sans-serif;
-  font-size:14px;
+  font-size: 14px;
   line-height: 20px;
   color: #808285;
   margin-top: 30px;
@@ -1379,7 +1379,7 @@ t2{
 
 .fineprint {
   font-family: 'GibsonLight', Verdana, sans-serif;
-  font-size:14px;
+  font-size: 14px;
   line-height: 20px;
   color: #808285;
 }
@@ -1483,7 +1483,7 @@ t2{
 
 .motto_wc {
   padding-bottom: 10px;
-  width:400px;
+  width: 400px;
   margin-top: 5px;
   font-size: 14px;
   font-family: 'GibsonLight', Verdana, sans-serif;
@@ -1933,7 +1933,7 @@ section {
   }
 
   .lineitem {
-    width:100%;
+    width: 100%;
     min-height: 58px;
   }
 
